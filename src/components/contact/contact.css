@@ -1,13 +1,13 @@
 form{
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1.1rem;
 }
 
 input, 
 textarea{
     width: 100%;
-    padding: 1.5rem;
+    padding: 1.2rem;
     border-radius: 0.5rem;
     background: #13274F;
     border: 2px solid var(--color-primary-variant);

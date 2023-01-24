@@ -120,12 +120,39 @@ font-weight: 200;
 `;
 const Botones = styled.div`
 display:flex;
+text-decoration: none;
 `;
 const BtnOne = styled.button`
 flex:50%;
+border-radius: 5px;
+border: 2px solid #39a0ca;
+background-color: #fff;
+transition: all .5s ease;
+
+&:hover {
+  background-color: #002244;
+  color:#fff;
+  border: 2px solid #39a0ca;
+
+  .link{
+   text-decoration: none; 
+   color:black;
+  }
+}
 `;
 const BtnTwo = styled.button`
 flex:50%;
+border-radius: 5px;
+border: 2px solid #39a0ca;
+background-color: #fff;
+transition: all .5s ease;
+
+&:hover {
+  background-color: #002244;
+  color:#fff;
+  border: 2px solid #39a0ca;
+}
+
 `;
 
 
@@ -169,7 +196,7 @@ const Imuebles = () => {
                                    <h4><i><FaToilet /></i> 2 Banos </h4>
                                </Details>
                                <Botones>
-                               <BtnOne><Link to={`/inmueble/${ImuebleData.id}`}>more info</Link></BtnOne> <BtnTwo>boton2</BtnTwo>
+                               <BtnOne><Link className='link' to={`/inmueble/${ImuebleData.id}`}>Mas informacion</Link></BtnOne> <BtnTwo>Contactanos</BtnTwo>
                                </Botones>
                                </BoxContent>
                               </Box>

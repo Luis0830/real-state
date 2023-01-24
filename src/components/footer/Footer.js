@@ -20,7 +20,7 @@ function Footer() {
       <div class='footer-links'>
         <div className='footer-link-wrapper'>
           <div class='footer-link-items'>
-            <h2>About Us</h2>
+            <h2>Nosotros</h2>
             <Link to='/sign-up'>How it works</Link>
             <Link to='/'>Testimonials</Link>
             <Link to='/'>Careers</Link>
@@ -28,7 +28,7 @@ function Footer() {
             <Link to='/'>Terms of Service</Link>
           </div>
           <div class='footer-link-items'>
-            <h2>Contact Us</h2>
+            <h2>Contactos</h2>
             <Link to='/'>Contact</Link>
             <Link to='/'>Support</Link>
             <Link to='/'>Destinations</Link>
@@ -38,7 +38,7 @@ function Footer() {
         <div className='footer-link-wrapper'>
           
           <div class='footer-link-items'>
-            <h2>Social Media</h2>
+            <h2>Redes Sociales</h2>
             <Link to='/'>Instagram</Link>
             <Link to={'.//www.facebook.com/people/Negocios-Inmobiliarios-Reyconfer/100058326134976'}>Facebook</Link>
             <Link to='/' onClick={onEmailClick}>Email</Link>
