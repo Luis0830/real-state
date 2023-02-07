@@ -4,14 +4,14 @@ title: 'property',
 type:'document',
 fields:[
     {
-name: 'id',
-title: 'id',
-type: 'number',
-    },
-    {
         name: 'title',
         title: 'title',
         type: 'string',
+    },
+    {
+name: 'id',
+title: 'id',
+type: 'number',
     },
     {
         name: 'price',
@@ -33,13 +33,13 @@ type: 'number',
         title: 'info',
         type: 'string',
     },
-    // {
-    //     name: 'image',
-    //     title: 'image',
-    //     type: 'array',
-    //     of: [{type: 'propertyImage'}]
+    {
+        name: 'image',
+        title: 'imagenes',
+        type: 'array',
+        of: [{type: 'image'}]
 
-    // },
+    },
     {
         name: 'propertyType',
         title: 'property Type',
@@ -56,12 +56,16 @@ type: 'number',
         }
     },
     {
-        name: 'image',
-        title: 'image',
-        type: 'array',
+        name: 'beds',
+        title: 'beds',
+        type: 'number',
 
     },
-]
+    
+],
+// preview: {
+//     title: 'name', media: 'image'
+// }
 }
 // id: '111',
 // title: 'Villas del mar',
