@@ -22,6 +22,19 @@ const Persona = () => {
 			.catch(console.error);
 	}, []);
 
+  return (
+   <>
+    {properties && properties.map((property) => ( <div>
+        <h1>{property.id}</h1>
+        <h1>{property.title}</h1>
+        <h1>HOls HOla HOLA HOLa</h1>
+    </div>
+  ))}
+   </>
+);
+    };
+
+export default Persona
 
 
 //    function Homepage() {
@@ -42,17 +55,3 @@ const Persona = () => {
 //             .catch(console.error);
 //         }, [])
 //     }
-
-  return (
-   <>
-    {properties && properties.map((property) => ( <div>
-        <h1>{property.id}</h1>
-        <h1>{property.title}</h1>
-        <h1>HOls HOla HOLA HOLa</h1>
-    </div>
-  ))}
-   </>
-);
-    };
-
-export default Persona
