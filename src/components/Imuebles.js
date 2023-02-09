@@ -168,8 +168,8 @@ const Imuebles = () => {
                                    <h4><i><FaBed /></i> {ImuebleData.room} habitaciones </h4>
                                    <h4><i><FaToilet /></i> 2 Banos </h4>
                                </Details>
-                               <Botones >
-                               <BtnOne className='bg-white  no-underline py-2 px-3 rounded-[18px] font-jaldi border-1 rounded-r-md'><Link to={`/inmueble/${ImuebleData.id}`} className='no-underline' >more info</Link></BtnOne> <BtnTwo className='bg-white  no-underline py-2 px-3 rounded-[18px] font-jaldi border-1 rounded-l-md'>boton2</BtnTwo>
+                               <Botones className='gap-2'>
+                               <BtnOne className='bg-d-red  no-underline py-2 px-3 rounded-[18px] border-0 rounded-r-md'><Link to={`/inmueble/${ImuebleData.id}`} className='no-underline text-[white] text-[14px]' >more info</Link></BtnOne> <BtnTwo className='bg-d-blue border-0 no-underline py-2 px-3 rounded-[18px] font-jaldi border-1 rounded-l-md text-[white] text-poppins text-[14px]'>boton2</BtnTwo>
                                </Botones>
                                </BoxContent>
                               </Box>
