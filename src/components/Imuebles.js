@@ -168,8 +168,8 @@ const Imuebles = () => {
                                    <h4><i><FaBed /></i> {ImuebleData.room} habitaciones </h4>
                                    <h4><i><FaToilet /></i> 2 Banos </h4>
                                </Details>
-                               <Botones>
-                               <BtnOne><Link to={`/inmueble/${ImuebleData.id}`}>more info</Link></BtnOne> <BtnTwo>boton2</BtnTwo>
+                               <Botones >
+                               <BtnOne className='bg-white  no-underline py-2 px-3 rounded-[18px] font-jaldi border-1 rounded-r-md'><Link to={`/inmueble/${ImuebleData.id}`} className='no-underline' >more info</Link></BtnOne> <BtnTwo className='bg-white  no-underline py-2 px-3 rounded-[18px] font-jaldi border-1 rounded-l-md'>boton2</BtnTwo>
                                </Botones>
                                </BoxContent>
                               </Box>

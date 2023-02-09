@@ -100,7 +100,7 @@ window.addEventListener('scroll', ChangeColor)
 
     return(
         <Nav style={navColor? {"background-color":"#00062C"} : {"background-color": ""}}>
-            <Logo to='/'><img src={require('../images/Logo1.png')} height='170' width='100%'  alt='logo'/></Logo>
+            <Logo to='/'><img src={require('../images/Logo1.png')} height='170' width='100%' alt='logo'/></Logo>
             <MenuBars onClick={toggle}/>
             <NavMenu>
                 {menuData.map((item, index) => (
