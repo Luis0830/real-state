@@ -104,7 +104,7 @@ window.addEventListener('scroll', ChangeColor)
             <MenuBars onClick={toggle}/>
             <NavMenu>
                 {menuData.map((item, index) => (
-                    <NavMenuLinks to={item.Link} key={index}>
+                    <NavMenuLinks to={item.Link} key={index} className='text-[17px] font-bold'>
                         {item.title}
                     </NavMenuLinks>
                 ))}

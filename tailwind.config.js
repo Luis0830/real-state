@@ -6,10 +6,14 @@ module.exports = {
     colors: {
       'd-blue': '#00204a',
       'd-red': '#ad2831',
+      'white': '#fff',
     },
     fontFamily: {
       'poppins': ['Poppins',  'sans-serif'],
   },
+  borderRadius: {
+    curves: '12rem'
+  }
   },
   plugins: [],
 }

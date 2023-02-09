@@ -71,7 +71,6 @@ align-items: center;
 img{
     width: 100%;
     height: 100%;
-    border-radius: 15px;
     object-fit:cover;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 
@@ -96,7 +95,7 @@ const InfoSection = ({heading, paragrOne, paragrTwo, buttonLabel, reverse, image
             <Button to='/inmueble' primary='true'>{buttonLabel}</Button>
             </Columnleft>
             <ColumnRight reverse={reverse}>
-            <img src={image} alt="home" />
+            <img src={image} alt="home" className='rounded-tl-curves rounded-br-curves'/>
             </ColumnRight>
         </Container>
        </Section>

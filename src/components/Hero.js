@@ -112,10 +112,6 @@ margin-right: 1rem;
 user-select: none;
 transition: 0.3s;
 
-&:hover{
-   background: #cd853f;
-   transform: scale(1.05);
-}
 `;
 
 const PrevArrow = styled(IoArrowBack)`
@@ -222,8 +218,8 @@ return(
                 )
             })}
             <SliderButtons>
-                <PrevArrow onClick={prevSlide}/>
-                <NextArrow onClick={nextSlide}/>
+                <PrevArrow onClick={prevSlide} className='hover:bg-d-red'/>
+                <NextArrow onClick={nextSlide} className='hover:bg-d-red'/>
             </SliderButtons>
         </HeroWrapper>
      </HeroSection>
