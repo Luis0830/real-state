@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect }  from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components/macro';
 import {ImuebleData} from '../data/ImuebleData';
@@ -7,6 +7,8 @@ import {FaWhatsapp, FaToilet,FaBed} from 'react-icons/fa';
 import { NavTwo } from './Navbar';
 import {motion} from 'framer-motion'
 import {animationTwo, transition} from './Animations/Animations'
+import {client} from "../lib/client";
+import sanityClient from "../lib/client";
 
 const ProSection = styled.div`
 padding-top:60px;
@@ -131,6 +133,39 @@ flex:50%;
 
 
 const Imuebles = () => {
+    
+    const [properties, setProperties] = useState(null);
+
+    useEffect(() => {
+		sanityClient
+			.fetch(
+				`*[_type == "property"]{
+      title,
+      id,
+      price,
+      path,
+      location,
+      status,
+      nivel,
+      tipo,
+      info,
+      propertytype,
+      beds,
+      mts,
+      mt2,
+      bath,
+      park,
+      patio,
+    }`
+			)
+			.then((data) => setProperties(data))
+			.catch(console.error);
+	}, []);
+
+
+
+
+
      return(
      
     <motion.div
@@ -139,10 +174,16 @@ const Imuebles = () => {
     exit="out"
     variants={animationTwo}
     transition={transition}
+    
     >
     <NavTwo />
+    <div className='grid'>
+    <div className='content-center items-center text-center'>
+                     <h1 className='  content-center items-center text-center'>Arreccifes Del Sol</h1>
+                 </div>
+    </div>
 <ProSection>
-
+                 
                {ImuebleData.map((ImuebleData) => {
                     return (
                         <InmuebleSection key={ImuebleData.id}>
@@ -178,6 +219,46 @@ const Imuebles = () => {
 
                         );
                })}
+               
+               
+               
+               
+               
+               {properties && properties.map((property) => (
+                    
+                        <InmuebleSection key={property.id}>
+                            
+                            
+                              <Box>
+                               <ImgContainer>
+                               <img src={''} alt="home" />
+                               <div><h4><GoLocation />{property.location}</h4>
+                               <h4>{property.status}</h4></div>
+                               </ImgContainer>
+                               <BoxContent>
+                                   <ItemPrice>
+                                        <h2>{property.price}</h2>
+                                        <div><h3><FaWhatsapp color='#128C7E' /></h3><h3><GoMail color='#4285F4' /></h3></div>
+                                   </ItemPrice>
+                               <LocationBox>
+                                   <h3>{property.tipo}</h3>
+                                   <p>localizado en {property.location}</p>
+                               </LocationBox>
+                               <Details>
+                                   <h4><i>icon</i> {property.mts} </h4>
+                                   <h4><i><FaBed /></i> {property.beds} habitaciones </h4>
+                                   <h4><i><FaToilet /></i> {property.bath} Banos </h4>
+                               </Details>
+                               <Botones className='gap-2'>
+                               <BtnOne className='bg-d-red  no-underline py-2 px-3 rounded-[18px] border-0 rounded-r-md'><Link to={`/inmueble/${ImuebleData.id}`} className='no-underline text-[white] text-[14px]' >more info</Link></BtnOne> <BtnTwo className='bg-d-blue border-0 no-underline py-2 px-3 rounded-[18px] font-jaldi border-1 rounded-l-md text-[white] text-poppins text-[14px]'>boton2</BtnTwo>
+                               </Botones>
+                               </BoxContent>
+                              </Box>
+                            
+                        </InmuebleSection>
+
+                        
+                        ))};
      
      </ProSection>
      </motion.div> 
