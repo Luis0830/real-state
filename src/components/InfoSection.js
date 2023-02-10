@@ -21,36 +21,15 @@ grid-template-rows: 800px;
 `;
 const Columnleft = styled.div`
 display: flex;
-Flex-direction: column;
 justify-content: center;
-align-items: flex-start;
-line-height: 1.4; //1.4
-padding: 1rem 4rem;
-order: ${({ reverse }) => (reverse? '2' : '1')};
 
 
-
-h1 {
-    margin-bottom: 1rem;
-    font-size: clamp(1.5rem, 6vw, 2rem);
-}
-
-p {
-    margin-bottom: 1.5rem;
-}
 @media screen and (max-width: 768px) {
     line-height: 1.0; 
-    padding: 10px;
     align-items: center;
     text-align: center;
     
-    p {
-    margin-bottom: 3.5rem;
-}
-h1 {
-    margin-bottom: 2rem;
-    font-size: clamp(1.5rem, 6vw, 2rem);
-}
+
 }
 `;
 const ColumnRight = styled.div`
@@ -87,12 +66,14 @@ img{
 const InfoSection = ({heading, paragrOne, paragrTwo, buttonLabel, reverse, image}) => {
     return(
        <Section>
-        <Container>
-            <Columnleft>
+        <Container className='gap-1'>
+            <Columnleft className='grid items-center justify-center'>
+            <div className='flex-colum h-[60%] w-[100%] border-2 border-black border-solid items-center justify-center text-center'>
             <h1>{heading}</h1>
             <p>{paragrOne}</p>
             <p>{paragrTwo}</p>
             <Button to='/inmueble' primary='true'>{buttonLabel}</Button>
+            </div>
             </Columnleft>
             <ColumnRight reverse={reverse}>
             <img src={image} alt="home" className='rounded-tl-curves rounded-br-curves'/>
