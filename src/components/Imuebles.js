@@ -7,8 +7,15 @@ import {FaWhatsapp, FaToilet,FaBed} from 'react-icons/fa';
 import { NavTwo } from './Navbar';
 import {motion} from 'framer-motion'
 import {animationTwo, transition} from './Animations/Animations'
-import {client} from "../lib/client";
 import sanityClient from "../lib/client";
+import imageUrlBuilder from "@sanity/image-url";
+
+
+const builder = imageUrlBuilder(sanityClient);
+
+function urlFor(source) {
+    return builder.image(source);
+}
 
 const ProSection = styled.div`
 padding-top:60px;
@@ -48,7 +55,7 @@ padding:10px;
 
 img{
     overflow: hidden;
-height: 100%;
+    height: 100%;
 width: 100%;
 object-fit: cover;
 border-radius:10px;
@@ -133,6 +140,7 @@ flex:50%;
 
 
 const Imuebles = () => {
+
     
     const [properties, setProperties] = useState(null);
 
@@ -156,6 +164,12 @@ const Imuebles = () => {
       bath,
       park,
       patio,
+      mainImage{
+        asset->{
+          _id,
+          url
+        },
+      },
     }`
 			)
 			.then((data) => setProperties(data))
@@ -231,7 +245,7 @@ const Imuebles = () => {
                             
                               <Box>
                                <ImgContainer>
-                               <img src={''} alt="home" />
+                               {property.mainImage && (<img src={urlFor(property.mainImage).url()} alt="" />)}
                                <div><h4><GoLocation />{property.location}</h4>
                                <h4>{property.status}</h4></div>
                                </ImgContainer>

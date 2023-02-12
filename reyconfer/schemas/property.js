@@ -62,6 +62,14 @@ type: 'number',
 
     },
     {
+        title: "Main Image",
+        name: "mainImage",
+        type: "image",
+        options: {
+          hotspot: true,
+        },
+      },
+    {
         name: 'propertytype',
         title: 'propertytype',
         type: 'string',
