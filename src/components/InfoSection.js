@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect }  from 'react';
 import styled from 'styled-components';
 import { Button } from './Button';
+import sanityClient from "../lib/client";
+import imageUrlBuilder from "@sanity/image-url";
 
+
+const builder = imageUrlBuilder(sanityClient);
+
+function urlFor(source) {
+    return builder.image(source);
+}
 const Section = styled.section`
 width: 100%;
 height: 100%;
@@ -63,23 +71,63 @@ img{
 }
 `;
 
-const InfoSection = ({heading, paragrOne, paragrTwo, buttonLabel, reverse, image}) => {
+
+
+const InfoSection = () => {
+    const [properties, setProperties] = useState(null);
+
+useEffect(() => {
+    sanityClient
+        .fetch(
+            `*[_type == "property"]{
+  title,
+  id,
+  price,
+  path,
+  location,
+  status,
+  nivel,
+  tipo,
+  info,
+  propertytype,
+  beds,
+  mts,
+  mt2,
+  bath,
+  park,
+  patio,
+  mainImage{
+    asset->{
+      _id,
+      url
+    },
+  },
+}`
+        )
+        .then((data) => setProperties(data))
+        .catch(console.error);
+}, []);
+
     return(
+        <div>
+        {properties && properties.map((property) => (
        <Section>
         <Container className='gap-1'>
             <Columnleft className='grid items-center justify-center'>
             <div className='flex-colum h-[60%] w-[100%] border-2 border-black border-solid items-center justify-center text-center'>
-            <h1>{heading}</h1>
-            <p>{paragrOne}</p>
-            <p>{paragrTwo}</p>
-            <Button to='/inmueble' primary='true'>{buttonLabel}</Button>
+            <h1>{property.title}</h1>
+            <p>{property.price}</p>
+            <p>{property.id}</p>
+            <Button to='/inmueble' primary='true'>Mas informacion</Button>
             </div>
             </Columnleft>
-            <ColumnRight reverse={reverse}>
-            <img src={image} alt="home" className='rounded-tl-curves rounded-br-curves'/>
+            <ColumnRight>
+            <img src='' alt="home" className='rounded-tl-curves rounded-br-curves'/>
             </ColumnRight>
         </Container>
        </Section>
+       ))};
+       </div>
     )
 }
 
