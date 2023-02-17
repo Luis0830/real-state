@@ -32,10 +32,19 @@ function Contact() {
     
     <section className='flex items-center justify-center content-center'>
     
-    <div className='w-[50%] h-full items-center justify-center content-center mx-3'>
-    <div className='p-20 border-solid rounded-[15px] border-2 m-3'><BsWhatsapp /></div>
-    <div className='p-20 border-solid rounded-[15px] border-2 m-3'><BsInstagram /></div>
-    <div className='p-20 border-solid rounded-[15px] border-2 m-3'><FaPhone /></div>
+    <div className='flex-col w-[50%] h-full items-center justify-center content-center mx-3 text-center'>
+    <div className='p-20 border-solid rounded-[15px] border-2 m-3 max-w-xs'>
+      <BsWhatsapp />
+      </div>
+    <div className='p-20 border-solid rounded-[15px] border-2 m-3'>
+      <BsInstagram />
+      </div>
+    <div className='p-20 border-solid rounded-[15px] border-2 m-3'>
+      <FaPhone />
+      <p>1-809-999-9999</p>
+      <p>1-809-999-9999</p>
+      <p>1-809-999-9999</p>
+      </div>
     </div>
     <div className='w-[100%] h-screen flex items-center justify-center content-center'>
       <form ref={form} onSubmit={sendEmail} className='flex-col content-center items-center justify-center'>
