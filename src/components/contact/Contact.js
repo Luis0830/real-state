@@ -1,5 +1,4 @@
-import React from 'react'
-import { useRef } from 'react';
+import React, { useRef } from 'react'
 import emailjs from 'emailjs-com';
 import { motion } from 'framer-motion';
 import {NavTwo} from '../Navbar';
@@ -30,26 +29,26 @@ function Contact() {
     <NavTwo />
     <motion.div initial='out' animate='in' exit='out' variants={animationThree} className='h-screen'>
     
-    <section className='flex items-center justify-center content-center'>
+    <section className='flex items-center justify-center content-center mx-2'>
     
-    <div className='flex-col w-[50%] h-full items-center justify-center content-center mx-3 text-center'>
+    <div className='flex-col w-[50%] h-full items-center justify-center content-center  text-center'>
     <div className='p-20 border-solid rounded-[15px] border-2 m-3 max-w-xs'>
       <BsWhatsapp />
       </div>
-    <div className='p-20 border-solid rounded-[15px] border-2 m-3'>
+    <div className='p-20 border-solid rounded-[15px] border-2 m-3 max-w-xs'>
       <BsInstagram />
       </div>
-    <div className='p-20 border-solid rounded-[15px] border-2 m-3'>
-      <FaPhone />
+    <div className=' border-solid rounded-[15px] border-2 m-3 max-w-xs'>
+      <FaPhone className='m-10'/>
       <p>1-809-999-9999</p>
       <p>1-809-999-9999</p>
       <p>1-809-999-9999</p>
       </div>
     </div>
-    <div className='w-[100%] h-screen flex items-center justify-center content-center'>
-      <form ref={form} onSubmit={sendEmail} className='flex-col content-center items-center justify-center'>
-        <input type="text" name='name' placeholder='Escribe tu nombre' className='w-full p-2 m-2 rounded-[15px]' required/>
-        <input type="email" name='email' placeholder='Escribe tu correo electronico' className='w-full p-2 m-2 rounded-[15px]' required/>
+    <div className='h-screen w-[50%] flex items-center justify-center content-center'>
+      <form ref={form} onSubmit={sendEmail} className=' w-[90%] gap-3 flex-col content-center items-center justify-center'>
+        <input type="text" name='name' placeholder='Escribe tu nombre' className='w-[90%] p-2  rounded-[15px]' required/>
+        <input type="email" name='email' placeholder='Escribe tu correo electronico' className=' p-2  rounded-[15px]' required/>
         <textarea name="message" rows="7" placeholder='Escribe tu mensaje' className='w-full p-2  m-2 rounded-[15px]' required></textarea>
         <button type='submit' className='btn btn-primary p-2'>Enviar Mensaje</button>
       </form>

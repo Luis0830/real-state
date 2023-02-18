@@ -4,7 +4,7 @@ export default sanityClient({
   projectId: "m4z2cfaq", // find this at manage.sanity.io or in your sanity.json
   dataset: "production", // this is from those question during 'sanity init'
   apiVersion: '2023-02-04',
-  useCdn: false,
+  useCdn: true,
 });
 
 //example: const sanityClient = require('@sanity/client')

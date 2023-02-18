@@ -20,7 +20,7 @@ function AnimateRoutes() {
     
      </Route>
       <Route path='/inmueble' element={<Imuebles/>} />
-      <Route path={`/inmueble/:productId`} element={<SingleProduct/>} />
+      <Route path={'/inmueble/:id'} element={<SingleProduct/>} />
       <Route path='/contactenos'  element={<Contact />}/>
     </Routes>
     </AnimatePresence>

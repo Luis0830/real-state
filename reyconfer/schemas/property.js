@@ -14,10 +14,11 @@ fields:[
         type: 'string',
     },
     {
-name: 'id',
-title: 'id',
-type: 'number',
+        name: 'details',
+        title: 'details',
+        type: 'string',
     },
+  
     {
         name: 'location',
         title: 'location',
