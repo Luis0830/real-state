@@ -146,6 +146,12 @@ const Imuebles = () => {
       mts,
       mt2,
       details,
+      images[]->{
+        asset->{
+            _id,
+            url
+          },
+      },
       bath,
       park,
       _id,

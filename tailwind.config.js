@@ -7,6 +7,7 @@ module.exports = {
       'd-blue': '#00204a',
       'd-red': '#ad2831',
       'white': '#fff',
+      'bggrey': 'rgb(229 231 235)',
     },
     fontFamily: {
       'poppins': ['Poppins',  'sans-serif'],

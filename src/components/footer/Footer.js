@@ -54,7 +54,7 @@ function Footer() {
               <i class='fab fa-typo3' />
             </Link>
           </div>
-          <small class='website-rights'>Reyconfer © 2022</small>
+          <small class='website-rights'>Reyconfer © 2023</small>
           <div class='social-icons'>
             <Link
               class='social-icon-link'
