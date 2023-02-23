@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components/macro';
 import {ImuebleData} from '../data/ImuebleData';
 import {GoLocation, GoMail} from 'react-icons/go';
 import {FaWhatsapp, FaToilet,FaBed} from 'react-icons/fa';
 import { NavTwo } from './Navbar';
-import {motion} from 'framer-motion'
-import {animationTwo, transition} from './Animations/Animations'
+import {motion} from 'framer-motion';
+import {animationTwo, transition} from './Animations/Animations';
+import sanityClient from "../lib/client";
 
 const ProSection = styled.div`
 padding-top:60px;
@@ -158,6 +159,24 @@ transition: all .5s ease;
 
 
 const Imuebles = () => {
+
+    const [properties, setProperties] = useState(null);
+
+    useEffect(() => {
+		sanityClient
+			.fetch(
+				`*[_type == "property"]{
+      title,
+      id,
+      price,
+      path,
+    }`
+			)
+			.then((data) => setProperties(data))
+			.catch(console.error);
+	}, []);
+
+
      return(
      
     <motion.div
@@ -170,20 +189,19 @@ const Imuebles = () => {
     <NavTwo />
 <ProSection>
 
-               {ImuebleData.map((ImuebleData) => {
-                    return (
+{properties && properties.map((property) => (
                         <InmuebleSection key={ImuebleData.id}>
                             
                             
                               <Box>
                                <ImgContainer>
-                               <img src={ImuebleData.image} alt="home" />
+                               {/* <img src={ImuebleData.image} alt="home" /> */}
                                <div><h4><GoLocation />LasTerrenas</h4>
                                <h4>En Venta</h4></div>
                                </ImgContainer>
                                <BoxContent>
                                    <ItemPrice>
-                                        <h2>$3,550,500</h2>
+                                        <h2>{property.price}</h2>
                                         <div><h3><FaWhatsapp color='#128C7E' /></h3><h3><GoMail color='#4285F4' /></h3></div>
                                    </ItemPrice>
                                <LocationBox>
@@ -192,7 +210,7 @@ const Imuebles = () => {
                                </LocationBox>
                                <Details>
                                    <h4><i>icon</i> 3500metros </h4>
-                                   <h4><i><FaBed /></i> {ImuebleData.room} habitaciones </h4>
+                                   <h4><i><FaBed /></i> {property.title} habitaciones </h4>
                                    <h4><i><FaToilet /></i> 2 Banos </h4>
                                </Details>
                                <Botones>
@@ -202,9 +220,8 @@ const Imuebles = () => {
                               </Box>
                             
                         </InmuebleSection>
-
-                        );
-               })}
+                       ))}
+               
      
      </ProSection>
      </motion.div> 
