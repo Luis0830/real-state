@@ -9,6 +9,7 @@ import { animationTwo, transition } from "./Animations/Animations";
 import sanityClient from "../lib/client";
 import imageUrlBuilder from "@sanity/image-url";
 import SingleProduct from "./SingleProduct";
+import Footer from "./footer/Footer";
 
 const builder = imageUrlBuilder(sanityClient);
 
@@ -276,6 +277,7 @@ const Imuebles = () => {
           ))}
         ;
       </ProSection>
+      <Footer />
     </motion.div>
   );
 };

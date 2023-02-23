@@ -9,6 +9,11 @@ export default {
             type: 'string',
         },
         {
+            name: 'torf',
+            title: 'torf',
+            type: 'boolean',
+        },
+        {
             name: 'price',
             title: 'price',
             type: 'string',

@@ -14,7 +14,13 @@ module.exports = {
   },
   borderRadius: {
     curves: '12rem'
-  }
+  },
+  screens: {
+    'sm': {'max': '460px'},
+      'md': {'min': '1024px'},
+      'lg': {'min': '1280px'},
+      'xl': {'min': '1536px'},
+  },
   },
   plugins: [],
 }

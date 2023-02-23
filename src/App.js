@@ -21,12 +21,11 @@ function App(){
 
 
   return (
-    <Router>
+    <Router className="overflow-auto">
     <GlobalStyle />
     <Navbar toggle={toggle} />
     <Dropdown isOpen={isOpen} toggle={toggle} />
     <AnimateRoutes />
-    <Footer />
     </Router>
     
   );
