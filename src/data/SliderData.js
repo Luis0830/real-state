@@ -1,11 +1,11 @@
-import ImagenA from '../images/imagen1.jpeg'
-import ImagenB from '../images/imagen2.jpeg'
-import ImagenC from '../images/imagen3.jpeg'
+import ImagenA from '../images/sliders/arroyo.jpg'
+import ImagenB from '../images/sliders/sol.jpg'
+import ImagenC from '../images/sliders/terrazas.png'
 
 export const SliderData = [
     {
-        title: 'Mar-e-Lago Residence',
-        price: 'desde 500USD',
+        title: 'Terrazas Del Arroyo',
+        price: 'Desde RD$67.000.00',
         path: 'inmueble/112',
         label: 'informacion',
         scroll: 'A',
@@ -13,16 +13,16 @@ export const SliderData = [
         alt: 'Recidencia'
     },
     {
-        title: 'Mar-e-Lago Residence',
-        price: 'desde 500USD',
+        title: 'Arrecifes del sol',
+        price: 'Desde USD$54,000.00',
         path: '/inmueble',
         label: 'informacion',
         image: ImagenB,
         alt: 'Recidencia'
     },
     {
-        title: 'Mar-e-Lago Residence',
-        price: 'desde 500USD',
+        title: 'Nuevas Terrazas',
+        price: 'desde $26,000.00',
         path: '/inmueble',
         label: 'informacion',
         image: ImagenC,

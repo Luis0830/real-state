@@ -1,13 +1,14 @@
-import React from 'react';
-import {link, useParams} from 'react-router-dom'
+import React, { useState, useEffect}from 'react';
 import styled from 'styled-components';
-import { ImuebleData } from '../data/ImuebleData';
 import SingleSlider from './SingleSlider/SingleSlider';
 import {GoLocation, GoMail} from 'react-icons/go';
 import {FaWhatsapp, FaToilet,FaBed} from 'react-icons/fa';
 import { NavTwo } from './Navbar';
 import { motion } from 'framer-motion';
 import {animationTwo, transition} from './Animations/Animations'
+import sanityClient from '@sanity/client';
+
+
 
 
 const ProductSection = styled.section`
@@ -17,11 +18,8 @@ background-color: #ece4db;
 `;
 
 
-const SingleProduct = () => {
-     const {productId} = useParams();
-     const product = ImuebleData.find((product) => product.id === productId);
-     const {title, price, label, images, room,
-      bath, info} = product;
+function SingleProduct ({product}) {
+ 
 
      
      const ContainerStyles =styled.div`
@@ -110,7 +108,6 @@ const SingleProduct = () => {
     transition: var(--transition);
      `
 
-
      return (
       <motion.div
       initial="out"
@@ -123,21 +120,21 @@ const SingleProduct = () => {
       <ProductSection>
         <section style={sectionStyle}>
         <ContainerStyles>
-        <SingleSlider image={images} />
+        {/* <SingleSlider image={images} /> */}
         </ContainerStyles>
         <TextContainer>
           <div style={titleStyle}>
-            <h1>{title}</h1>
-            <p>{price}</p>
+            <h1>{product.title}</h1>
+            <p>{product.details}</p>
             </div>
             <ContentStyle>
               <DetailsStyle>
-              <p><FaBed />{room} Habitaciones</p>
-               <p><FaToilet />{bath} Baños</p>
+              <p><FaBed />{product.beds} Habitaciones</p>
+               <p><FaToilet />{product.bath} Baños</p>
                <p><GoLocation /> location</p>
               </DetailsStyle>
               <TextDetailsStyle>
-              <p>{info}</p>
+              <p>{product.bath}</p>
               <div>iconos</div>
               <BtnContact>Contactanos</BtnContact>
               </TextDetailsStyle>

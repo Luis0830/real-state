@@ -1,9 +1,11 @@
-import React from 'react'
-import { useRef } from 'react';
+import React, { useRef } from 'react'
 import emailjs from 'emailjs-com';
-import './contact.css';
 import { motion } from 'framer-motion';
+import {NavTwo} from '../Navbar';
 import {animationThree} from '../Animations/Animations'
+import {BsWhatsapp, BsInstagram} from 'react-icons/bs';
+import {FaPhone} from 'react-icons/fa';
+
 
 function Contact() {
   const form = useRef();
@@ -23,43 +25,38 @@ function Contact() {
     
 
   return (
-    <motion.div initial='out' animate='in' exit='out' variants={animationThree}>
-    <div>Contact</div>
-    <div id="contact">
-      <div className="contact_title">
-      <h5>Get in Touch</h5>
-      <h2>Contact me</h2>
+    <>
+    <NavTwo />
+    <motion.div initial='out' animate='in' exit='out' variants={animationThree} className='h-screen'>
+    
+    <section className='flex items-center justify-center content-center mx-2'>
+    
+    <div className='flex-col w-[50%] h-full items-center justify-center content-center  text-center'>
+    <div className='p-20 border-solid rounded-[15px] border-2 m-3 max-w-xs'>
+      <BsWhatsapp />
       </div>
-      <div className="container contact__container">
-      <div className="contact__options">
-        <article className='contact__option'>
-{/*<HiOutlineMail className='contact-icon' />*/}
-          <h4>Email</h4>
-          <h5>luiscarlosgarcia0830@gmail.com</h5>
-          <a href="mailto:luiscarlosgarcia0830@gmail.com" target="_blank">Send a message</a>
-        </article>
-        <article className='contact__option'>
-          {/*<SiWhatsapp className='contact-icon' />*/}
-          <h4>Whatsapp</h4>
-          <a href="https://api.whatsapp.com/send?phone=18099316145" target="_blank">Send a message</a>
-        </article>
-        <article className='contact__option'>
-          {/*<FiPhone className='contact-icon'/>*/}
-          <h4>Phone</h4>
-          <h5>+1-809-931-6145</h5>
-        </article>
+    <div className='p-20 border-solid rounded-[15px] border-2 m-3 max-w-xs'>
+      <BsInstagram />
       </div>
+    <div className=' border-solid rounded-[15px] border-2 m-3 max-w-xs'>
+      <FaPhone className='m-10'/>
+      <p>1-809-999-9999</p>
+      <p>1-809-999-9999</p>
+      <p>1-809-999-9999</p>
       </div>
-      </div>
-    {/*from below*/}
-    <form ref={form} onSubmit={sendEmail}>
-        <input type="text" name='name' placeholder='Nombre' required/>
-        <input type="email" name='email' placeholder='Correo Electronico' required/>
-        <textarea name="message" rows="7" placeholder='Tu mensaje' required></textarea>
-        <button type='submit' className='btn btn-primary'>Enviar</button>
-
+    </div>
+    <div className='h-screen w-[50%] flex items-center justify-center content-center'>
+      <form ref={form} onSubmit={sendEmail} className=' w-[90%] gap-3 flex-col content-center items-center justify-center'>
+        <input type="text" name='name' placeholder='Escribe tu nombre' className='w-[90%] p-2  rounded-[15px]' required/>
+        <input type="email" name='email' placeholder='Escribe tu correo electronico' className=' p-2  rounded-[15px]' required/>
+        <textarea name="message" rows="7" placeholder='Escribe tu mensaje' className='w-full p-2  m-2 rounded-[15px]' required></textarea>
+        <button type='submit' className='btn btn-primary p-2'>Enviar Mensaje</button>
       </form>
+      </div>
+  
+    </section>
       </motion.div>
+    </>
   )
 }
 

@@ -4,19 +4,41 @@ title: 'property',
 type:'document',
 fields:[
     {
+        name: 'project',
+        title: 'project',
+        type: 'string',
+    },
+    {
         name: 'title',
         title: 'title',
         type: 'string',
     },
     {
-name: 'id',
-title: 'id',
-type: 'number',
+        name: 'details',
+        title: 'details',
+        type: 'string',
     },
+  
+    {
+        name: 'location',
+        title: 'location',
+        type: 'string',
+            },
+            {
+                name: 'status',
+                title: 'status',
+                type: 'string',
+                    },
     {
         name: 'price',
         title: 'price',
+        type: 'string',
+    },
+    {
+        name: 'nivel',
+        title: 'nivel',
         type: 'number',
+
     },
     {
         name: 'path',
@@ -24,8 +46,8 @@ type: 'number',
         type: 'string',
     },
     {
-        name: 'label',
-        title: 'label',
+        name: 'tipo',
+        title: 'tipo',
         type: 'string',
     },
     {
@@ -41,15 +63,23 @@ type: 'number',
 
     },
     {
-        name: 'propertyType',
-        title: 'property Type',
+        title: "Main Image",
+        name: "mainImage",
+        type: "image",
+        options: {
+          hotspot: true,
+        },
+      },
+    {
+        name: 'propertytype',
+        title: 'propertytype',
         type: 'string',
         options: {
             list: [
-                {title: 'house', value: 'house'},
-                {title: 'apartamento', value: 'apartamento'},
-                {title: 'villa', value: 'villa'},
-                {title: 'habitacion', value: 'habitacion'},
+                {title: 'house', value: 'Casa'},
+                {title: 'apartamento', value: 'Apartamento'},
+                {title: 'villa', value: 'Villa'},
+                {title: 'habitacion', value: 'Habitacion'},
 
             ],
             layout: 'ratio'
@@ -59,6 +89,36 @@ type: 'number',
         name: 'beds',
         title: 'beds',
         type: 'number',
+
+    },
+    {
+        name: 'mts',
+        title: 'mts',
+        type: 'number',
+
+    }, 
+    {
+        name: 'mt2',
+        title: 'mt2',
+        type: 'number',
+
+    },
+    {
+        name: 'bath',
+        title: 'bath',
+        type: 'number',
+
+    },
+    {
+        name: 'park',
+        title: 'park',
+        type: 'number',
+
+    },
+    {
+        name: 'patio',
+        title: 'patio',
+        type: 'string',
 
     },
     

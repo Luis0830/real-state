@@ -16,11 +16,11 @@ function AnimateRoutes() {
   return (
     <AnimatePresence exitBeforeEnter>
     <Routes location={location} key={location.pathname}>
-         <Route path='/' element={<> <Hero slides={SliderData} /> <InfoSection {...InfoData}/> <InfoSection {...InfoData2}/></>}>
+         <Route path='/' element={<> <Hero slides={SliderData} />  <InfoSection /></>}>
     
      </Route>
       <Route path='/inmueble' element={<Imuebles/>} />
-      <Route path={`/inmueble/:productId`} element={<SingleProduct/>} />
+      <Route path={'/inmueble/:id'} element={<SingleProduct/>} />
       <Route path='/contactenos'  element={<Contact />}/>
     </Routes>
     </AnimatePresence>
