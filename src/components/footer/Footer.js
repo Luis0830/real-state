@@ -21,18 +21,13 @@ function Footer() {
         <div className='footer-link-wrapper'>
           <div class='footer-link-items'>
             <h2>Nosotros</h2>
-            <Link to='/sign-up'>How it works</Link>
-            <Link to='/'>Testimonials</Link>
-            <Link to='/'>Careers</Link>
-            <Link to='/'>Investors</Link>
-            <Link to='/'>Terms of Service</Link>
+            <Link to='/inmueble'>Proyectos</Link>
+            <Link to='/about'>Quiénes Somos</Link>
           </div>
+          
           <div class='footer-link-items'>
             <h2>Contáctanos</h2>
-            <Link to='/'>Contact</Link>
-            <Link to='/'>Support</Link>
-            <Link to='/'>Destinations</Link>
-            <Link to='/'>Sponsorships</Link>
+            <Link to='/contactenos'>Contacto</Link>
           </div>
         </div>
         <div className='footer-link-wrapper'>
