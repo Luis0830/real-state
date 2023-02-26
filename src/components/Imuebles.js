@@ -15,6 +15,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 import { GoLocation, GoMail } from "react-icons/go";
 import { FaWhatsapp, FaToilet, FaBed } from "react-icons/fa";
+import { BsArrowsFullscreen } from "react-icons/bs";
 import { NavTwo } from "./Navbar";
 import { motion } from "framer-motion";
 import { animationTwo, transition } from "./Animations/Animations";
@@ -309,22 +310,22 @@ const Imuebles = () => {
                       </div>
                     </ItemPrice>
                     <LocationBox>
-                      <h3>{property.tipo}</h3>
+                      <h3>{property.title}</h3>
                       <p>localizado en {property.location}</p>
                     </LocationBox>
-                    <Details>
+                    <Details className="my-2">
                       <h4>
-                        <i>icon</i> {property.mts}{" "}
+                        <i className="mr-1 text-[15px]"><BsArrowsFullscreen /></i>{property.mts}{" "}
                       </h4>
                       <h4>
                         <i>
-                          <FaBed />
+                          <FaBed className="text-[15px]"/>
                         </i>{" "}
                         {property.beds} habitaciones{" "}
                       </h4>
                       <h4>
                         <i>
-                          <FaToilet />
+                          <FaToilet className="text-[15px]"/>
                         </i>{" "}
                         {property.bath} Banos{" "}
                       </h4>
@@ -347,7 +348,7 @@ const Imuebles = () => {
               </InmuebleSection>
             </>
           ))}
-        ;
+        
       </ProSection>
       <Footer />
     </motion.div>

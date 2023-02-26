@@ -1,21 +1,26 @@
 export default {
-    name: 'slides',
-    title: 'slides',
+    name: 'infoSec2',
+    title: 'infoSec2',
     type:'document',
     fields:[
         {
-            name: 'project',
-            title: 'project',
+            name: 'title',
+            title: 'title',
             type: 'string',
         },
         {
-            name: 'video',
-            title: 'video',
-            type: 'file',
+            name: 'torf',
+            title: 'torf',
+            type: 'boolean',
         },
         {
-            name: 'path',
-            title: 'path',
+            name: 'price',
+            title: 'price',
+            type: 'string',
+        },
+        {
+            name: 'description',
+            title: 'description',
             type: 'string',
         },
         {

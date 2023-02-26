@@ -8,6 +8,7 @@ import Imuebles from './Imuebles';
 import InfoSection from './InfoSection'
 import { AnimatePresence } from 'framer-motion';
 import Contact from './contact/Contact';
+import About from './About';
 
 
 function AnimateRoutes() {
@@ -22,6 +23,7 @@ function AnimateRoutes() {
       <Route path='/inmueble' element={<Imuebles/>} />
       <Route path={'/inmueble/:id'} element={<SingleProduct/>} />
       <Route path='/contactenos'  element={<Contact />}/>
+      <Route path='/about'  element={<About />}/>
     </Routes>
     </AnimatePresence>
   )
