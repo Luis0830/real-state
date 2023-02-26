@@ -15,6 +15,7 @@ import Footer from "./footer/Footer";
 const builder = imageUrlBuilder(sanityClient);
 
 function urlFor(source) {
+  
   return builder.image(source);
 }
 
