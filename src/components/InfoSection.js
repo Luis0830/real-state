@@ -143,28 +143,28 @@ useEffect(() => {
         <div className='bg-bggrey'>
         {properties && properties.map((infoSec) => (
        <section className='w-full pt-12 mb-10 bg-bggrey'>
-        <container className='m-0 w-full h-full gap-1 antialiased bg-bggrey grid grid-cols-2 sm:grid-cols-1 gap-1 sm:gap-0 '>
-            <div  className={infoSec.torf? 'max-w-[75%] m-10 sm:-mt-1 md:order-last sm:order-last grid  object-contain items-center rounded-[35px] justify-center bg-bggrey overflow-hidden' : 'max-w-[75%] m-10 sm:-mt-1 shadow-lg md:order-first sm:order-last grid  md:ml-60 object-contain items-center rounded-[35px] justify-center bg-bggrey overflow-hidden'}>
-            <div className='p-10 sm:p-5 flex-colum py-10 sm:py-5 md:px-10 w-[100%] shadow-lg rounded-[35px] bg-white items-center justify-center text-center'>
-            <h1 className=' md:mb-10 sm:mb-2 md:text-[50px] sm:text-[20px] text-d-blue' >{infoSec.title}</h1>
+        <container className='m-0 w-full h-full gap-1 antialiased bg-bggrey md:grid mid:grid md:grid-cols-2   mid:grid-cols-2  sm:grid-cols-1 gap-1 sm:gap-0 mid:gap-0'>
+            <div  className={infoSec.torf? 'max-w-[75%] m-10 sm:-mt-1 md:order-last mid:order-last sm:order-last grid  object-contain items-center rounded-[35px] justify-center bg-bggrey overflow-hidden' : 'max-w-[75%] m-10 sm:-mt-1 shadow-lg md:order-first mid:order-first sm:order-last grid  md:ml-60 mid:ml-[20%]  object-contain items-center rounded-[35px] justify-center bg-bggrey overflow-hidden'}>
+            <div className='p-10 sm:p-5 flex-colum py-10 sm:py-5 md:px-10 mid:px-10 w-[100%] shadow-lg rounded-[35px] bg-white items-center justify-center text-center'>
+            <h1 className=' md:mb-10 mid:mb-5 sm:mb-2 md:text-[50px] mid:text-[30px] sm:text-[20px] text-d-blue' >{infoSec.title}</h1>
 
-            <div className='md:hidden sm:mb-2 md:mx-20 md:my-2 grid object-cover md:max-h-[700px] md:max-w-[800px] items-center content-center justify-center text-center'>
+            <div className='md:hidden mid:hidden sm:mb-2 md:mx-20 mid:mx-15 md:my-2 grid object-cover md:max-h-[700px] md:max-w-[800px] items-center content-center justify-center text-center'>
             {infoSec.mainImage && (
-            <img  src={urlFor(infoSec.mainImage).url()} alt="home" className='h-full md:ml-20 w-full sm:rounded-[10px] md:rounded-tl-curves md:rounded-br-curves object-cover shadow-2xl' />
+            <img  src={urlFor(infoSec.mainImage).url()} alt="home" className='h-full md:ml-20 w-full sm:rounded-[10px] md:rounded-tl-curves mid:rounded-tl-curves md:rounded-br-curves mid:rounded-br-curves object-cover shadow-2xl' />
             )}
             </div>
             
-            <div className='flex md:gap-10 sm:gap-2 items-center justify-center text-center text-d-red font-semibold'>
-                <p className='sm:text-[12px]'>{infoSec.price}</p> 
+            <div className='flex md:gap-10 mid:gap-10 sm:gap-2 items-center justify-center text-center text-d-red font-semibold'>
+                <p className='sm:text-[12px] '>{infoSec.price}</p> 
                 <p className='font-semibold sm:text-[12px]'><GoLocation className='md:mr-2 text-[20px] ' />{infoSec.label}</p>
                 </div>
-            <p className='md:my-10 sm:my-3 text-[17px] sm:text-[11px] sm:font-[520] text-center font-normal'>{infoSec.description}</p>
+            <p className='md:my-10 mid:my-4 sm:my-3 text-[17px] sm:text-[11px] text-justify sm:font-[520] text-center font-normal'>{infoSec.description}</p>
             <div className='items-center justify-center text-center cursor-pointer' ><Link to='/inmueble'><button className=' cursor-pointer p-4 sm:p-3 w-[50%] sm:w-full md:mb-5 border-2 border-solid rounded-[25px] bg-d-blue text-white font-bold md:text-[15px] sm:text-[12px]'  primary='true'>Mas informacion</button></Link></div>
             </div>
             </div>
-            <div className=' sm:hidden mx-20 md:my-2 grid object-cover max-h-[700px] max-w-[800px] items-center content-center justify-center text-center'>
+            <div className=' sm:hidden mx-20 md:mx-20 mid:mx-10 md:my-2 grid object-cover max-h-[700px] max-w-[800px] items-center content-center justify-center text-center'>
             {infoSec.mainImage && (
-            <img  src={urlFor(infoSec.mainImage).url()} alt="home" className={infoSec.torf? 'sm:-ml-4 h-full md:ml-20 w-full md:rounded-tl-curves md:rounded-br-curves object-cover shadow-2xl' : 'sm:-ml-5 h-full w-full md:-ml-20 md:rounded-tr-curves md:rounded-bl-curves object-cover shadow-2xl'} />
+            <img  src={urlFor(infoSec.mainImage).url()} alt="home" className={infoSec.torf? 'sm:-ml-4 h-full md:ml-20 mid:ml-[10%] w-full md:rounded-tl-curves mid:rounded-tl-curves md:rounded-br-curves mid:rounded-br-curves object-cover shadow-2xl' : 'sm:-ml-5 h-full w-full md:-ml-20 mid:-ml-[10%] md:rounded-tr-curves mid:rounded-tr-curves md:rounded-bl-curves mid:rounded-bl-curves object-cover shadow-2xl'} />
             )}
             </div>
         </container>
