@@ -1,37 +1,16 @@
+// In your schema.js file
 export default {
-    name: 'slides',
-    title: 'slides',
-    type:'document',
-    fields:[
-        {
-            name: 'project',
-            title: 'project',
-            type: 'string',
-        },
-        {
-            name: 'video',
-            title: 'video',
-            type: 'file',
-        },
-        {
-            name: 'path',
-            title: 'path',
-            type: 'string',
-        },
-        {
-            name: 'label',
-            title: 'label',
-            type: 'string',
-        },
-        {
-            title: "Main Image",
-            name: "mainImage",
-            type: "image",
-            options: {
-              hotspot: true,
-            },
-          },
-        
-
-    ],
-}
+    name: 'post',
+    type: 'document',
+    fields: [
+      // Other fields...
+      {
+        name: 'video',
+        type: 'file',
+        title: 'Video',
+        accept: 'video/*',
+        description: 'Upload a video to associate with this post'
+      }
+    ]
+  }
+  
