@@ -144,7 +144,7 @@ useEffect(() => {
         {properties && properties.map((infoSec) => (
        <section className='w-full pt-12 mb-10 bg-bggrey'>
         <container className='m-0 w-full h-full gap-1 antialiased bg-bggrey md:grid mid:grid md:grid-cols-2   mid:grid-cols-2  sm:grid-cols-1 gap-1 sm:gap-0 mid:gap-0'>
-            <div  className={infoSec.torf? 'max-w-[75%] m-10 sm:-mt-1 md:order-last mid:order-last sm:order-last grid  object-contain items-center rounded-[35px] justify-center bg-bggrey overflow-hidden' : 'max-w-[75%] m-10 sm:-mt-1 shadow-lg md:order-first mid:order-first sm:order-last grid  md:ml-60 mid:ml-[20%]  object-contain items-center rounded-[35px] justify-center bg-bggrey overflow-hidden'}>
+            <div  className={infoSec.torf? 'max-w-[75%] m-10 sm:-mt-1 md:order-last mid:order-last sm:order-last grid  object-contain items-center rounded-[35px] justify-center shadow-lg bg-bggrey overflow-hidden' : 'max-w-[75%] m-10 sm:-mt-1 shadow-lg md:order-first mid:order-first sm:order-last grid  md:ml-60 mid:ml-[20%]  object-contain items-center rounded-[35px] justify-center bg-bggrey overflow-hidden'}>
             <div className='p-10 sm:p-5 flex-colum py-10 sm:py-5 md:px-10 mid:px-10 w-[100%] shadow-lg rounded-[35px] bg-white items-center justify-center text-center'>
             <h1 className=' md:mb-10 mid:mb-5 sm:mb-2 md:text-[50px] mid:text-[30px] sm:text-[20px] text-d-blue' >{infoSec.title}</h1>
 
