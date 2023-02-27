@@ -1,13 +1,10 @@
 import React, {useState} from 'react';
 import Dropdown from './components/Dropdown';
-import Footer from './components/footer/Footer';
-
 import Navbar from './components/Navbar';
-
 import GlobalStyle from './globalStyle';
 import {BrowserRouter as Router} from 'react-router-dom';
-
 import AnimateRoutes from './components/AnimateRoutes';
+import ScrollToTop from './components/ScrollToTop';
 
 
 
@@ -22,6 +19,7 @@ function App(){
 
   return (
     <Router className="overflow-auto">
+      <ScrollToTop />
     <GlobalStyle />
     <Navbar toggle={toggle} />
     <Dropdown isOpen={isOpen} toggle={toggle} />
