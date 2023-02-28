@@ -94,7 +94,7 @@ fields:[
     {
         name: 'mts',
         title: 'mts',
-        type: 'number',
+        type: 'string',
 
     }, 
     {

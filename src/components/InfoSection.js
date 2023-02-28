@@ -7,6 +7,7 @@ import { GoLocation} from "react-icons/go";
 import { Link } from 'react-router-dom';
 import Footer from './footer/Footer';
 import Post from './Post'
+import { Helmet } from 'react-helmet';
 
 
 const builder = imageUrlBuilder(sanityClient);
@@ -166,6 +167,10 @@ useEffect(() => {
 
     return(
         <div className='antialiased bg-bggrey h-full overflow '>
+            <Helmet>
+                <title>Reyconfer</title>
+                <meta name="description" content="Nuestro objetivo es ayudar a nuestros clientes a encontrar el hogar de sus sueños, ya sea una casa para vivir, una propiedad de inversión o un espacio comercial. Nos esforzamos por proporcionar un servicio personalizado que cumpla con las necesidades individuales de cada cliente, y estamos dedicados a hacer todo lo posible para garantizar su satisfacción. En resumen, nuestra misión es ser un socio confiable y confiable para nuestros clientes en el proceso de compra, venta o alquiler de propiedades." />
+            </Helmet>
         <div className='bg-bggrey'>
         {properties && properties.map((infoSec) => (
        <section className='w-full pt-12 mb-10 bg-bggrey'>

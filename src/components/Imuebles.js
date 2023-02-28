@@ -11,6 +11,7 @@ import sanityClient from "../lib/client";
 import imageUrlBuilder from "@sanity/image-url";
 import SingleProduct from "./SingleProduct";
 import Footer from "./footer/Footer";
+import { Helmet } from 'react-helmet';
 
 const builder = imageUrlBuilder(sanityClient);
 
@@ -92,10 +93,7 @@ const ItemPrice = styled.div`
       color: grey;
     }
   }
-  h2 {
-    font-size: 1.1rem;
-    font-weight: 300;
-  }
+ 
 `;
 const LocationBox = styled.div`
   h3 {
@@ -130,6 +128,94 @@ const Imuebles = () => {
   const [selectedProductId, setSelectedProductId] = useState(null);
 
   const [properties, setProperties] = useState(null);
+
+  function onEmailClick() {
+    window.open(`mailto:${'imperiobrdominmicanrepublic@gmail.com'}`);
+  }
+
+  useEffect(() => {
+    sanityClient
+      .fetch(
+        `*[_type == "property"]{
+      title,
+      id,
+      price,
+      path,
+      location,
+      status,
+      nivel,
+      tipo,
+      info,
+      propertytype,
+      beds,
+      mts,
+      mt2,
+      details,
+      images[]->{
+        asset->{
+            _id,
+            url
+          },
+      },
+      bath,
+      park,
+      _id,
+      patio,
+      mainImage{
+        asset->{
+          _id,
+          url
+        },
+      },
+    }`
+      )
+      .then((data) => setProperties(data))
+      .catch(console.error);
+  }, []);
+
+  // *******************************Seccion2*************************************
+
+  useEffect(() => {
+    sanityClient
+      .fetch(
+        `*[_type == ""]{
+      title,
+      id,
+      price,
+      path,
+      location,
+      status,
+      nivel,
+      tipo,
+      info,
+      propertytype,
+      beds,
+      mts,
+      mt2,
+      details,
+      images[]->{
+        asset->{
+            _id,
+            url
+          },
+      },
+      bath,
+      park,
+      _id,
+      patio,
+      mainImage{
+        asset->{
+          _id,
+          url
+        },
+      },
+    }`
+      )
+      .then((data) => setProperties(data))
+      .catch(console.error);
+  }, []);
+
+  // *************************************seccion3*****************************************************
 
   useEffect(() => {
     sanityClient
@@ -200,6 +286,10 @@ const Imuebles = () => {
       variants={animationTwo}
       transition={transition}
     >
+      <Helmet>
+                <title>Proyectos</title>
+                <meta name="description" content="Explora nuestros proyectos, Venta de apartamentos y Casas en la Republica Dominicana" />
+            </Helmet>
       <NavTwo />
       <div className="grid">
         <div className="content-center items-center text-center">
@@ -208,8 +298,79 @@ const Imuebles = () => {
           </h1>
         </div>
       </div>
-      <ProSection>
-        {properties &&
+  {/* //     <ProSection>
+  //       {properties && */}
+  {/* //         properties.map((property) => (
+  //           <>
+  //             <InmuebleSection key={property.id}>
+  //               <Box key={property.id}>
+  //                 <ImgContainer>
+  //                   {property.mainImage && ( */}
+  {/* //                     <img src={urlFor(property.mainImage).url()} alt="" />
+  //                   )}
+  //                   <div>
+  //                     <h4>
+  //                       <GoLocation />
+  //                       {property.location}
+  //                     </h4>
+  //                     <h4>{property.status}</h4>
+  //                   </div>
+  //                 </ImgContainer>
+  //                 <BoxContent>
+  //                   <ItemPrice>
+  //                     <h2 className="text-[14px]">{property.price}</h2>
+  //                     <div>
+  //                       <h3>
+  //                         <FaWhatsapp color="#128C7E" />
+  //                       </h3>
+  //                       <h3>
+  //                         <GoMail color="#4285F4" />
+  //                       </h3>
+  //                     </div>
+  //                   </ItemPrice>
+  //                   <LocationBox>
+  //                     <h3>{property.title}</h3>
+  //                     <p>localizado en {property.location}</p>
+  //                   </LocationBox>
+  //                   <Details className="my-2">
+  //                     <h4>
+  //                       <i className="mr-1 text-[15px]"><BsArrowsFullscreen /></i>{property.mts}{" "}
+  //                     </h4>
+  //                     <h4>
+  //                       <i>
+  //                         <FaBed className="text-[15px]"/>
+  //                       </i>{" "}
+  //                       {property.beds} habitaciones{" "}
+  //                     </h4>
+  //                     <h4>
+  //                       <i>
+  //                         <FaToilet className="text-[15px]"/>
+  //                       </i>{" "}
+  //                       {property.bath} Baños{" "}
+  //                     </h4>
+  //                   </Details>
+  //                   <Botones className="gap-2">
+  //                     <BtnOne
+  //                       className="bg-d-red  no-underline py-2 px-3 rounded-[18px] border-0 rounded-r-md"
+  //                       onClick={() => handleProductClick(property._id)}
+  //                     >
+  //                       <p className="no-underline text-[white] text-[14px]">
+  //                         Detalles
+  //                       </p>
+  //                     </BtnOne>{" "}
+  //                     <BtnTwo className="bg-d-blue border-0 no-underline py-2 px-3 rounded-[18px] font-jaldi border-1 rounded-l-md text-[white] text-poppins text-[14px]">
+  //                       Contacto
+  //                     </BtnTwo>
+  //                   </Botones>
+  //                 </BoxContent>
+  //               </Box>
+  //             </InmuebleSection>
+  //           </>
+  //         ))}
+  //          </ProSection> */}
+          {/* seccion2 ***************************************************************************************************************/}
+          <ProSection>
+          {properties &&
           properties.map((property) => (
             <>
               <InmuebleSection key={property.id}>
@@ -228,19 +389,19 @@ const Imuebles = () => {
                   </ImgContainer>
                   <BoxContent>
                     <ItemPrice>
-                      <h2>{property.price}</h2>
+                      <h2 className="text-[14px]">{property.price}</h2>
                       <div>
                         <h3>
-                          <FaWhatsapp color="#128C7E" />
+                          <Link to={'.//api.whatsapp.com/send?phone=18294432380'} target='_blank'><FaWhatsapp color="#128C7E" /></Link>
                         </h3>
                         <h3>
-                          <GoMail color="#4285F4" />
+                          <Link to="" onClick={onEmailClick}><GoMail color="#4285F4" /></Link>
                         </h3>
                       </div>
                     </ItemPrice>
                     <LocationBox>
                       <h3>{property.title}</h3>
-                      <p>localizado en {property.location}</p>
+                      <p className="text-center">{property.info}</p>
                     </LocationBox>
                     <Details className="my-2">
                       <h4>
@@ -256,7 +417,7 @@ const Imuebles = () => {
                         <i>
                           <FaToilet className="text-[15px]"/>
                         </i>{" "}
-                        {property.bath} Banos{" "}
+                        {property.bath} Baños{" "}
                       </h4>
                     </Details>
                     <Botones className="gap-2">
@@ -265,11 +426,11 @@ const Imuebles = () => {
                         onClick={() => handleProductClick(property._id)}
                       >
                         <p className="no-underline text-[white] text-[14px]">
-                          more info
+                          Detalles
                         </p>
                       </BtnOne>{" "}
                       <BtnTwo className="bg-d-blue border-0 no-underline py-2 px-3 rounded-[18px] font-jaldi border-1 rounded-l-md text-[white] text-poppins text-[14px]">
-                        boton2
+                        <Link to='/contactenos' className="no-underline text-white">Contacto</Link>
                       </BtnTwo>
                     </Botones>
                   </BoxContent>
@@ -277,8 +438,80 @@ const Imuebles = () => {
               </InmuebleSection>
             </>
           ))}
-        
-      </ProSection>
+          </ProSection>
+          {/* seccion 3s ********************************************************************************************/}
+          {/* // <ProSection>
+          // {properties &&
+          // properties.map((property) => (
+          //   <>
+          //     <InmuebleSection key={property.id}>
+          //       <Box key={property.id}>
+          //         <ImgContainer>
+          //           {property.mainImage && (
+          //             <img src={urlFor(property.mainImage).url()} alt="" />
+          //           )}
+          //           <div>
+          //             <h4>
+          //               <GoLocation />
+          //               {property.location}
+          //             </h4>
+          //             <h4>{property.status}</h4>
+          //           </div>
+          //         </ImgContainer>
+          //         <BoxContent>
+          //           <ItemPrice>
+          //             <h2 className="text-[14px]">{property.price}</h2>
+          //             <div>
+          //               <h3>
+          //                 <FaWhatsapp color="#128C7E" />
+          //               </h3>
+          //               <h3>
+          //                 <GoMail color="#4285F4" />
+          //               </h3>
+          //             </div>
+          //           </ItemPrice>
+          //           <LocationBox>
+          //             <h3>{property.title}</h3>
+          //             <p>localizado en {property.location}</p>
+          //           </LocationBox>
+          //           <Details className="my-2">
+          //             <h4>
+          //               <i className="mr-1 text-[15px]"><BsArrowsFullscreen /></i>{property.mts}{" "}
+          //             </h4>
+          //             <h4>
+          //               <i>
+          //                 <FaBed className="text-[15px]"/>
+          //               </i>{" "}
+          //               {property.beds} habitaciones{" "}
+          //             </h4>
+          //             <h4>
+          //               <i>
+          //                 <FaToilet className="text-[15px]"/>
+          //               </i>{" "}
+          //               {property.bath} Baños{" "}
+          //             </h4>
+          //           </Details>
+          //           <Botones className="gap-2">
+          //             <BtnOne
+          //               className="bg-d-red  no-underline py-2 px-3 rounded-[18px] border-0 rounded-r-md"
+          //               onClick={() => handleProductClick(property._id)}
+          //             >
+          //               <p className="no-underline text-[white] text-[14px]">
+          //                 Detalles
+          //               </p>
+          //             </BtnOne>{" "}
+          //             <BtnTwo className="bg-d-blue border-0 no-underline py-2 px-3 rounded-[18px] font-jaldi border-1 rounded-l-md text-[white] text-poppins text-[14px]">
+          //               Contacto
+          //             </BtnTwo>
+          //           </Botones>
+          //         </BoxContent>
+          //       </Box>
+          //     </InmuebleSection>
+          //   </>
+          // ))}
+          // </ProSection> */}
+
+      
       <Footer />
     </motion.div>
   );

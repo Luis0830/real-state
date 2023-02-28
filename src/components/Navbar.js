@@ -110,7 +110,7 @@ window.addEventListener('scroll', ChangeColor)
                 ))}
             </NavMenu>
             <NavWS>
-               <Link to={'.//api.whatsapp.com/send?phone=18294432380'}><FaWhatsapp color='#fff'/></Link>
+               <Link to={'.//api.whatsapp.com/send?phone=18294432380'} target='_blank'><FaWhatsapp color='#fff'/></Link>
             </NavWS>
         </Nav>
     );

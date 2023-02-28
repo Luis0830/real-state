@@ -6,6 +6,7 @@ import {animationThree} from '../Animations/Animations'
 import {BsWhatsapp, BsInstagram} from 'react-icons/bs';
 import {FaPhone} from 'react-icons/fa';
 import { GoMail } from "react-icons/go";
+import { Helmet } from 'react-helmet';
 
 
 function Contact() {
@@ -29,7 +30,10 @@ function Contact() {
     <>
     <NavTwo />
     <motion.div initial='out' animate='in' exit='out' variants={animationThree} className='h-screen sm:h-full bg-gradient-to-br from-navi to-naviblue '>
-    
+    <Helmet>
+                <title>Proyectos</title>
+                <meta name="description" content="Contactanos para informacion, contizaciones, Detalles " />
+            </Helmet>
     <section className='flex sm:flex-col items-center justify-center content-center mx-2'>
     
     <div className='flex-cols sm:mt-5 sm:order-last md:mx-[5%] md:w-[50%] sm:w-[100%]  h-full items-center justify-center content-center  text-center'>
@@ -37,24 +41,23 @@ function Contact() {
       <BsWhatsapp className='mt-5 mb-3 text-[30px] text-navi'/>
       <div className='mt-5 text-[12px]'>
       <h2>Escríbenos</h2>
+      <p>1-829-443-2380</p>
+      <p>+34 676 47 27 03</p>
       </div>
       </div>
     <div className='sm:flex-col p-10 sm:m-0 sm:p-0 sm:ml-6 border-solid border-lineblue bg-lineblue rounded-[15px] overflow-hidden border-2 m-3  max-w-xs'>
       <GoMail className='text-[40px] sm:-mb-[40px] sm:mt-5 text-navi'/>
-      <div className='flex m-10 mb-5 sm:m-0 sm:mt-8 sm:mb-0 flex-col '>
-      <div className='space-y-2 sm:space-y-1 text-[14px] font-[600]'>
-      <p>the_luiscar-gmail.com</p>
-      <p>fulano gmail.com</p>
-      <p>azure.jesus.com</p>
+      <div className='flex  mb-5 sm:m-0 sm:mt-8 sm:mb-0 flex-col '>
+      <div className='space-y-2 sm:space-y-1  font-[600]'>
+      <p className='text-[12px]'>imperiobrdominicanrepublic@gmail.com</p>
       </div>;
       </div>
       </div>
     <div className='border-solid  rounded-[15px] sm:ml-6 border-lineblue bg-lineblue border-2 m-3 max-w-xs'>
       <FaPhone className='mt-5 sm:mt-3 mb-3 sm:mb-1 text-[30px] text-navi'/>
       <div className='mb-5 sm:mb-1'>
-      <p>1-809-999-9999</p>
-      <p>1-809-999-9999</p>
-      <p>1-809-999-9999</p>
+      <p>1-829-443-2380</p>
+      <p>+34 676 47 27 03</p>
       </div>
       </div>
     </div>
