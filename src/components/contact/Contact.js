@@ -3,7 +3,7 @@ import emailjs from 'emailjs-com';
 import { motion } from 'framer-motion';
 import {NavTwo} from '../Navbar';
 import {animationThree} from '../Animations/Animations'
-import {BsWhatsapp, BsInstagram} from 'react-icons/bs';
+import {BsWhatsapp} from 'react-icons/bs';
 import {FaPhone} from 'react-icons/fa';
 import { GoMail } from "react-icons/go";
 import { Helmet } from 'react-helmet';

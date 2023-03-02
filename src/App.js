@@ -21,13 +21,11 @@ function App(){
   return (
     <Router className="overflow-auto">
       <Helmet>
-        <title>Reyconfer</title>
-        <meta 
-        name='description' 
-        content='Imoviliaria Reyconfer, venta y alquiler de casas, apartamentos y proyectos en la Republica Dominicana'
-        />
-        <meta name='keywords' content='reyconfer, Reyconfer, venta y alquiler, Apartamentos rd, apartamento, casa, imobiliaria RD, ventas de hogar,inmobiliaria, casas rd'/>
-      </Helmet>
+      <title>Reyconfer - Venta de Propiedades en República Dominicana</title>
+        <meta name="description" content="Reyconfer es una empresa dedicada a la venta de propiedades en República Dominicana. Encuentra tu hogar ideal en nuestra selección de casas y apartamentos en diferentes áreas de la ciudad y el pais. Contáctanos hoy." />
+        <meta name="keywords" content="Reyconfer, propiedades, venta, casas, apartamentos, hogar, República Dominicana" />
+        <link rel="canonical" href="https://www.reyconfer.com/" />    
+        </Helmet>
       <ScrollToTop />
     <GlobalStyle />
     <Navbar toggle={toggle} />

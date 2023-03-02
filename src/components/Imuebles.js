@@ -11,12 +11,10 @@ import sanityClient from "../lib/client";
 import imageUrlBuilder from "@sanity/image-url";
 import SingleProduct from "./SingleProduct";
 import Footer from "./footer/Footer";
-import { Helmet } from 'react-helmet';
 
 const builder = imageUrlBuilder(sanityClient);
 
 function urlFor(source) {
-  
   return builder.image(source);
 }
 
@@ -93,7 +91,6 @@ const ItemPrice = styled.div`
       color: grey;
     }
   }
- 
 `;
 const LocationBox = styled.div`
   h3 {
@@ -130,7 +127,7 @@ const Imuebles = () => {
   const [properties, setProperties] = useState(null);
 
   function onEmailClick() {
-    window.open(`mailto:${'imperiobrdominmicanrepublic@gmail.com'}`);
+    window.open(`mailto:${"imperiobrdominmicanrepublic@gmail.com"}`);
   }
 
   useEffect(() => {
@@ -274,9 +271,6 @@ const Imuebles = () => {
       </div>
     );
   }
-  {
-    /* <ProductDetail product={selectedProduct} onClose={() => setSelectedProductId(null)} />; */
-  }
 
   return (
     <motion.div
@@ -286,10 +280,6 @@ const Imuebles = () => {
       variants={animationTwo}
       transition={transition}
     >
-      <Helmet>
-                <title>Proyectos</title>
-                <meta name="description" content="Explora nuestros proyectos, Venta de apartamentos y Casas en la Republica Dominicana" />
-            </Helmet>
       <NavTwo />
       <div className="grid">
         <div className="content-center items-center text-center">
@@ -298,15 +288,15 @@ const Imuebles = () => {
           </h1>
         </div>
       </div>
-  {/* //     <ProSection>
+      {/* //     <ProSection>
   //       {properties && */}
-  {/* //         properties.map((property) => (
+      {/* //         properties.map((property) => (
   //           <>
   //             <InmuebleSection key={property.id}>
   //               <Box key={property.id}>
   //                 <ImgContainer>
   //                   {property.mainImage && ( */}
-  {/* //                     <img src={urlFor(property.mainImage).url()} alt="" />
+      {/* //                     <img src={urlFor(property.mainImage).url()} alt="" />
   //                   )}
   //                   <div>
   //                     <h4>
@@ -368,9 +358,9 @@ const Imuebles = () => {
   //           </>
   //         ))}
   //          </ProSection> */}
-          {/* seccion2 ***************************************************************************************************************/}
-          <ProSection>
-          {properties &&
+      {/* seccion2 ***************************************************************************************************************/}
+      <ProSection>
+        {properties &&
           properties.map((property) => (
             <>
               <InmuebleSection key={property.id}>
@@ -392,10 +382,17 @@ const Imuebles = () => {
                       <h2 className="text-[14px]">{property.price}</h2>
                       <div>
                         <h3>
-                          <Link to={'.//api.whatsapp.com/send?phone=18294432380'} target='_blank'><FaWhatsapp color="#128C7E" /></Link>
+                          <Link
+                            to={".//api.whatsapp.com/send?phone=18294432380"}
+                            target="_blank"
+                          >
+                            <FaWhatsapp color="#128C7E" />
+                          </Link>
                         </h3>
                         <h3>
-                          <Link to="" onClick={onEmailClick}><GoMail color="#4285F4" /></Link>
+                          <Link to="" onClick={onEmailClick}>
+                            <GoMail color="#4285F4" />
+                          </Link>
                         </h3>
                       </div>
                     </ItemPrice>
@@ -405,17 +402,20 @@ const Imuebles = () => {
                     </LocationBox>
                     <Details className="my-2">
                       <h4>
-                        <i className="mr-1 text-[15px]"><BsArrowsFullscreen /></i>{property.mts}{" "}
+                        <i className="mr-1 text-[15px]">
+                          <BsArrowsFullscreen />
+                        </i>
+                        {property.mts}{" "}
                       </h4>
                       <h4>
                         <i>
-                          <FaBed className="text-[15px]"/>
+                          <FaBed className="text-[15px]" />
                         </i>{" "}
                         {property.beds} habitaciones{" "}
                       </h4>
                       <h4>
                         <i>
-                          <FaToilet className="text-[15px]"/>
+                          <FaToilet className="text-[15px]" />
                         </i>{" "}
                         {property.bath} Baños{" "}
                       </h4>
@@ -430,7 +430,12 @@ const Imuebles = () => {
                         </p>
                       </BtnOne>{" "}
                       <BtnTwo className="bg-d-blue border-0 no-underline py-2 px-3 rounded-[18px] font-jaldi border-1 rounded-l-md text-[white] text-poppins text-[14px]">
-                        <Link to='/contactenos' className="no-underline text-white">Contacto</Link>
+                        <Link
+                          to="/contactenos"
+                          className="no-underline text-white"
+                        >
+                          Contacto
+                        </Link>
                       </BtnTwo>
                     </Botones>
                   </BoxContent>
@@ -438,9 +443,9 @@ const Imuebles = () => {
               </InmuebleSection>
             </>
           ))}
-          </ProSection>
-          {/* seccion 3s ********************************************************************************************/}
-          {/* // <ProSection>
+      </ProSection>
+      {/* seccion 3s ********************************************************************************************/}
+      {/* // <ProSection>
           // {properties &&
           // properties.map((property) => (
           //   <>
@@ -511,7 +516,6 @@ const Imuebles = () => {
           // ))}
           // </ProSection> */}
 
-      
       <Footer />
     </motion.div>
   );

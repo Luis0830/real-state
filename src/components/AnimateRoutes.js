@@ -2,13 +2,13 @@ import React from 'react'
 import {Routes, Route, useLocation} from 'react-router-dom';
 import Hero from './Hero';
 import SingleProduct from './SingleProduct';
-import { InfoData, InfoData2 } from '../data/InfoData';
 import {SliderData} from '../data/SliderData'
 import Imuebles from './Imuebles';
 import InfoSection from './InfoSection'
 import { AnimatePresence } from 'framer-motion';
 import Contact from './contact/Contact';
 import About from './About';
+import { Helmet } from 'react-helmet';
 
 
 function AnimateRoutes() {
@@ -17,7 +17,19 @@ function AnimateRoutes() {
   return (
     <AnimatePresence exitBeforeEnter>
     <Routes location={location} key={location.pathname}>
-         <Route path='/' element={<> <Hero slides={SliderData} />  <InfoSection /></>}>
+         <Route path='/' element={<> <Helmet>
+        <title>
+          Casas en venta en República Dominicana - Encuentra tu hogar ideal
+        </title>
+        <meta
+          name="description"
+          content="Encuentra la casa de tus sueños en República Dominicana. Ofrecemos una amplia selección de casas en venta en diferentes áreas del pais. Contáctanos hoy."
+        />
+        <meta
+          name="keywords"
+          content="casas, compra, venta, apartamentos, alquiler, RD, República Dominicana, hogar, vivienda"
+        />
+      </Helmet> <Hero slides={SliderData} />  <InfoSection /></>}>
     
      </Route>
       <Route path='/inmueble' element={<Imuebles/>} />

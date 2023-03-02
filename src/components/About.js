@@ -3,10 +3,16 @@ import Footer from './footer/Footer'
 import { NavTwo } from './Navbar'
 import { Link } from 'react-router-dom';
 import houseImage from '../images/Logo1.png';
+import { Helmet } from 'react-helmet';
 
 function About() {
   return (
     <>
+    <Helmet>
+    <title>Sobre nosotros - Somos expertos en bienes raíces en República Dominicana</title>
+<meta name="description" content="Somos una empresa dedicada a la venta de bienes raíces en República Dominicana. Nuestro objetivo es ayudarte a encontrar la propiedad ideal para ti. Contáctanos hoy para obtener más información." />
+<meta name="keywords" content="bienes raíces, venta, apartamentos, reyconfer, República Dominicana, equipo, expertos" />
+    </Helmet>
     <NavTwo />
     <section className="bg-gradient-to-br from-navi to-d-red">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
