@@ -1,0 +1,114 @@
+// import { useState, useEffect, useRef } from 'react';
+// import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa';
+// import { GoPrimitiveDot } from 'react-icons/go';
+// import sanityClient from "../lib/client";
+// import imageUrlBuilder from "@sanity/image-url";
+
+
+// const builder = imageUrlBuilder(sanityClient);
+
+// function urlFor(source) {
+//   return builder.image(source);
+// }
+
+// const SingleSlider = ({ images, autoplay = false, autoplayDelay = 3000 }) => {
+//   const [currentIndex, setCurrentIndex] = useState(0);
+//   const length = images?.length || 0;
+//   const timerRef = useRef(null);
+
+//   useEffect(() => {
+//     if (autoplay) {
+//       timerRef.current = setInterval(() => {
+//         setCurrentIndex((currentIndex) =>
+//           currentIndex === length - 1 ? 0 : currentIndex + 1
+//         );
+//       }, autoplayDelay);
+//     }
+//     return () => clearInterval(timerRef.current);
+//   }, [autoplay, autoplayDelay, length]);
+
+//   const sliderStyle = {
+//     height: '100%',
+//     position: 'relative',
+//   };
+
+//   const slideStyle = {
+//     width: '100%',
+//     height: '100%',
+//     backgroundImage:
+//       length > 0 ? `url(${images[currentIndex].asset.url})` : 'none',
+//     borderRadius: '10px',
+//     backgroundPosition: 'center',
+//     backgroundSize: 'cover',
+//   };
+
+//   const leftArrowStyle = {
+//     position: 'absolute',
+//     top: '50%',
+//     transform: 'translate(0, -50%)',
+//     left: '15px',
+//     fontSize: '35px',
+//     color: '#fff',
+//     zIndex: 1,
+//     cursor: 'pointer',
+//   };
+
+//   const rightArrowStyle = {
+//     position: 'absolute',
+//     top: '50%',
+//     transform: 'translate(0, -50%)',
+//     right: '15px',
+//     fontSize: '35px',
+//     color: '#fff',
+//     zIndex: 1,
+//     cursor: 'pointer',
+//   };
+
+//   const dotsContainerStyles = {
+//     display: 'flex',
+//     justifyContent: 'center',
+//   };
+
+//   const dotsStyle = {
+//     margin: '0 3px',
+//     cursor: 'pointer',
+//     fontSize: '20px',
+//   };
+
+//   const goToPrevious = () => {
+//     const isFirstSlide = currentIndex === 0;
+//     const newIndex = isFirstSlide ? length - 1 : currentIndex - 1;
+//     setCurrentIndex(newIndex);
+//   };
+
+//   const nextSlide = () => {
+//     setCurrentIndex((currentIndex) =>
+//       currentIndex === length - 1 ? 0 : currentIndex + 1
+//     );
+//   };
+
+//   const goToSlide = (slideIndex) => {
+//     setCurrentIndex(slideIndex);
+//   };
+
+//   return (
+//     <div style={sliderStyle}>
+//       <FaArrowAltCircleLeft style={leftArrowStyle} onClick={goToPrevious} />
+//       <FaArrowAltCircleRight style={rightArrowStyle} onClick={nextSlide} />
+//       <div style={slideStyle}></div>
+//       {length > 0 && (
+//         <div style={dotsContainerStyles}>
+//           {images.map((image, index) => (
+//             <GoPrimitiveDot
+//               key={index}
+//               style={dotsStyle}
+//               onClick={() => goToSlide(index)}
+//             />
+//           ))}
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default SingleSlider;

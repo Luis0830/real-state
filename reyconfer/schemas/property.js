@@ -56,13 +56,6 @@ fields:[
         type: 'string',
     },
     {
-        name: 'image',
-        title: 'imagenes',
-        type: 'array',
-        of: [{type: 'image'}]
-
-    },
-    {
         title: "Main Image",
         name: "mainImage",
         type: "image",
@@ -70,6 +63,7 @@ fields:[
           hotspot: true,
         },
       },
+
     {
         name: 'propertytype',
         title: 'propertytype',
@@ -121,6 +115,12 @@ fields:[
         type: 'string',
 
     },
+    {
+        title: 'Images',
+        name: 'images',
+        type: 'array',
+        of: [{ type: 'image', options: { hotspot: true } }],
+      },
     
 ],
 // preview: {

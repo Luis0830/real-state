@@ -9,8 +9,6 @@ import {animationTwo, transition} from './Animations/Animations'
 import sanityClient from '@sanity/client';
 
 
-
-
 const ProductSection = styled.section`
 padding-top: 70px;
 padding-bottom: 30px;
@@ -120,7 +118,7 @@ function SingleProduct ({product}) {
       <ProductSection>
         <section style={sectionStyle}>
         <ContainerStyles>
-        {/* <SingleSlider image={images} /> */}
+        <SingleSlider image={product.images} />
         </ContainerStyles>
         <TextContainer>
           <div style={titleStyle}>

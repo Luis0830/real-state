@@ -1,82 +1,87 @@
-import {useState} from 'react';
-import {FaArrowAltCircleLeft, FaArrowAltCircleRight} from 'react-icons/fa';
-import {GoPrimitiveDot} from 'react-icons/go';
+import { useState } from 'react';
+import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa';
+import { GoPrimitiveDot } from 'react-icons/go';
+import sanityClient from '@sanity/client';
+import imageUrlBuilder from '@sanity/image-url';
+
+const builder = imageUrlBuilder(sanityClient);
 
 const SingleSlider = ({ image }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const length = image.length;
-  
+
   const sliderStyle = {
     height: '100%',
     position: 'relative',
-  }
-  
+  };
+
   const slideStyle = {
     width: '100%',
     height: '100%',
-    backgroundImage: `url(${image[currentIndex].img})`,
+    backgroundImage: `url(${builder.image(image[currentIndex]).url()})`,
     borderRadius: '10px',
     backgroundPosition: 'center',
     backgroundSize: 'cover',
-  
-  }
-  const leftArrowStyle ={
+  };
+
+  const leftArrowStyle = {
     position: 'absolute',
     top: '50%',
     transform: 'translate(0, -50%)',
     left: '15px',
-    fontSize: '35px',
-    color:'#fff',
-    zIndex:1,
+    fontSize: '3rem',
+    color: '#fff',
+    zIndex: '10',
     cursor: 'pointer',
+    userSelect: 'none',
+  };
 
-  }
-  const rightArrowStyle ={
+  const rightArrowStyle = {
     position: 'absolute',
     top: '50%',
     transform: 'translate(0, -50%)',
     right: '15px',
-    fontSize: '35px',
-    color:'#fff',
-    zIndex:1,
+    fontSize: '3rem',
+    color: '#fff',
+    zIndex: '10',
     cursor: 'pointer',
-  }
-  const dotsContainerStyles = {
-    display: 'flex',
-    justifyContent: 'center',
-  }
-  const dotsStyle = {
-     margin: '0 3px',
-     cursor: 'pointer',
-     fontSize: '20px',
-  }
+    userSelect: 'none',
+  };
 
-  const goToPrevious = () => {
-    const isFirstSlide = currentIndex === 0 ;
-    const newIndex = isFirstSlide ? image.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
-  }
-   const nextSlide = () => {
-      setCurrentIndex(currentIndex => (currentIndex === length - 1 ? 0 : currentIndex + 1));
-    
-  }
-  const goToSlide = (slideIndex) => {
-    setCurrentIndex(slideIndex);
-  }
+  const dotStyle = {
+    fontSize: '2rem',
+    color: '#fff',
+    cursor: 'pointer',
+    userSelect: 'none',
+  };
 
-  return(
-    
+  const prevSlide = () => {
+    const index = (currentIndex - 1 + length) % length;
+    setCurrentIndex(index);
+  };
+
+  const nextSlide = () => {
+    const index = (currentIndex + 1) % length;
+    setCurrentIndex(index);
+  };
+
+  return (
     <div style={sliderStyle}>
-      <FaArrowAltCircleLeft style={leftArrowStyle} onClick={goToPrevious}/>
-      <FaArrowAltCircleRight style={rightArrowStyle} onClick={nextSlide}/>
       <div style={slideStyle}></div>
-      <div style={dotsContainerStyles}>{image.map((slide,slideIndex) => (
-        <GoPrimitiveDot key={slideIndex} style={dotsStyle} onClick={() => goToSlide(slideIndex)}/>
-      ))}
+      <FaArrowAltCircleLeft style={leftArrowStyle} onClick={prevSlide} />
+      <FaArrowAltCircleRight style={rightArrowStyle} onClick={nextSlide} />
+      <div style={{ textAlign: 'center' }}>
+        {image.map((img, index) => (
+          <GoPrimitiveDot
+            key={index}
+            style={dotStyle}
+            onClick={() => setCurrentIndex(index)}
+            color={index === currentIndex ? 'red' : 'white'}
+          />
+        ))}
       </div>
     </div>
+  );
+};
 
-  )
-
-  }
 export default SingleSlider;
