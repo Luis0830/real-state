@@ -1,6 +1,7 @@
 import React, { useState, useEffect}from 'react';
 import styled from 'styled-components';
 import SingleSlider from './SingleSlider/SingleSlider';
+import ImgCarrusel from './SingleSlider/ImgCarrusel';
 import {GoLocation, GoMail} from 'react-icons/go';
 import {FaWhatsapp, FaToilet,FaBed} from 'react-icons/fa';
 import { NavTwo } from './Navbar';
@@ -14,11 +15,12 @@ padding-top: 70px;
 padding-bottom: 30px;
 background-color: #ece4db;
 `;
-
-
-function SingleProduct ({product}) {
  
 
+function SingleProduct ({product}) {
+    
+  console.log(product.images);
+  console.log(product.mainImage);
      
      const ContainerStyles =styled.div`
         width: 600px;
@@ -115,10 +117,11 @@ function SingleProduct ({product}) {
       transition={transition}
       >
       <NavTwo />
+      <ImgCarrusel /> 
       <ProductSection>
         <section style={sectionStyle}>
         <ContainerStyles>
-        <SingleSlider image={product.images} />
+        {/* <SingleSlider image={product.images.url} /> */}
         </ContainerStyles>
         <TextContainer>
           <div style={titleStyle}>

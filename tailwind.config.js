@@ -13,6 +13,7 @@ module.exports = {
       'lineblue':'#4db5ff',
       'textarea': '#ADD8E6',
       'hoveline': '#00CCFF',
+      'arrows'  :  '#000000',
     },
     fontFamily: {
       'poppins': ['Poppins',  'sans-serif'],

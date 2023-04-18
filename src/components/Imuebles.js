@@ -134,122 +134,38 @@ const Imuebles = () => {
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[_type == "property"]{
-      title,
-      id,
-      price,
-      path,
-      location,
-      status,
-      nivel,
-      tipo,
-      info,
-      propertytype,
-      beds,
-      mts,
-      mt2,
-      details,
-      images[]->{
-        asset->{
-            _id,
-            url
+        `*[_type == "property" || _type == ""]{
+          title,
+          id,
+          price,
+          path,
+          location,
+          status,
+          nivel,
+          tipo,
+          info,
+          propertytype,
+          beds,
+          mts,
+          mt2,
+          details,
+          images[]->{
+            asset->{
+              _id,
+              url
+            },
           },
-      },
-      bath,
-      park,
-      _id,
-      patio,
-      mainImage{
-        asset->{
+          bath,
+          park,
           _id,
-          url
-        },
-      },
-    }`
-      )
-      .then((data) => setProperties(data))
-      .catch(console.error);
-  }, []);
-
-  // *******************************Seccion2*************************************
-
-  useEffect(() => {
-    sanityClient
-      .fetch(
-        `*[_type == ""]{
-      title,
-      id,
-      price,
-      path,
-      location,
-      status,
-      nivel,
-      tipo,
-      info,
-      propertytype,
-      beds,
-      mts,
-      mt2,
-      details,
-      images[]->{
-        asset->{
-            _id,
-            url
+          patio,
+          mainImage{
+            asset->{
+              _id,
+              url
+            },
           },
-      },
-      bath,
-      park,
-      _id,
-      patio,
-      mainImage{
-        asset->{
-          _id,
-          url
-        },
-      },
-    }`
-      )
-      .then((data) => setProperties(data))
-      .catch(console.error);
-  }, []);
-
-  // *************************************seccion3*****************************************************
-
-  useEffect(() => {
-    sanityClient
-      .fetch(
-        `*[_type == "property"]{
-      title,
-      id,
-      price,
-      path,
-      location,
-      status,
-      nivel,
-      tipo,
-      info,
-      propertytype,
-      beds,
-      mts,
-      mt2,
-      details,
-      images[]->{
-        asset->{
-            _id,
-            url
-          },
-      },
-      bath,
-      park,
-      _id,
-      patio,
-      mainImage{
-        asset->{
-          _id,
-          url
-        },
-      },
-    }`
+        }`
       )
       .then((data) => setProperties(data))
       .catch(console.error);
