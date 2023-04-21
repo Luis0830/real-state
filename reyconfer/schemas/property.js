@@ -121,7 +121,54 @@ fields:[
         type: 'array',
         of: [{ type: 'image', options: { hotspot: true } }],
       },
-    
+      {
+        title: "imagen 1",
+        name: "img1",
+        type: "image",
+        options: {
+          hotspot: true,
+        },
+      },
+      {
+        title: "imagen 2",
+        name: "img2",
+        type: "image",
+        options: {
+          hotspot: true,
+        },
+      },
+      {
+        title: "imagen 3",
+        name: "img3",
+        type: "image",
+        options: {
+          hotspot: true,
+        },
+      },
+      {
+        title: "imagen 4",
+        name: "img4",
+        type: "image",
+        options: {
+          hotspot: true,
+        },
+      },
+      {
+        title: "imagen 5",
+        name: "img5",
+        type: "image",
+        options: {
+          hotspot: true,
+        },
+      },
+      {
+        title: "imagen 6",
+        name: "img6",
+        type: "image",
+        options: {
+          hotspot: true,
+        },
+      },
 ],
 // preview: {
 //     title: 'name', media: 'image'

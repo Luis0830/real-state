@@ -7,7 +7,8 @@ import {FaWhatsapp, FaToilet,FaBed} from 'react-icons/fa';
 import { NavTwo } from './Navbar';
 import { motion } from 'framer-motion';
 import {animationTwo, transition} from './Animations/Animations'
-import sanityClient from '@sanity/client';
+import sanityClient from "../lib/client";
+import imageUrlBuilder from "@sanity/image-url";
 
 
 const ProductSection = styled.section`
@@ -19,7 +20,7 @@ background-color: #ece4db;
 
 function SingleProduct ({product}) {
     
-  console.log(product.images);
+  console.log(product.img1);
   console.log(product.mainImage);
      
      const ContainerStyles =styled.div`
@@ -108,6 +109,34 @@ function SingleProduct ({product}) {
     transition: var(--transition);
      `
 
+     const builder = imageUrlBuilder(sanityClient);
+
+function urlFor(source) {
+  return builder.image(source);
+}
+
+     const images = [
+      {
+          url: (urlFor(product.img1).url())
+      },
+      {
+          url: (urlFor(product.img2).url())
+      },
+      {
+          url: (urlFor(product.img3).url())
+      },
+      {
+          url: (urlFor(product.img4).url())
+      },
+      {
+          url: (urlFor(product.img5).url())
+      },
+      {
+        url: (urlFor(product.img6).url())
+    },
+      ];
+      console.log(images);
+
      return (
       <motion.div
       initial="out"
@@ -117,7 +146,7 @@ function SingleProduct ({product}) {
       transition={transition}
       >
       <NavTwo />
-      <ImgCarrusel /> 
+      <ImgCarrusel slides={images}/> 
       <ProductSection>
         <section style={sectionStyle}>
         <ContainerStyles>

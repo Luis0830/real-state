@@ -165,6 +165,42 @@ const Imuebles = () => {
               url
             },
           },
+          img1{
+            asset->{
+              _id,
+              url
+            },
+          },
+          img2{
+            asset->{
+              _id,
+              url
+            },
+          },
+          img3{
+            asset->{
+              _id,
+              url
+            },
+          },
+          img4{
+            asset->{
+              _id,
+              url
+            },
+          },
+          img5{
+            asset->{
+              _id,
+              url
+            },
+          },
+          img6{
+            asset->{
+              _id,
+              url
+            },
+          },
         }`
       )
       .then((data) => setProperties(data))

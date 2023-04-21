@@ -2,25 +2,9 @@ import React, {useState} from 'react'
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs'; 
 import {RxDotFilled} from 'react-icons/rx'
 
-function ImgCarrusel() {
+function ImgCarrusel({slides}) {
 
-    const slides = [
-        {
-            url: 'https://cdn.sanity.io/images/m4z2cfaq/production/0c2584e6bffb65e3139138eb3bd7aea6991c4ab6-2252x1351.jpg'
-        },
-        {
-            url: 'https://cdn.sanity.io/images/m4z2cfaq/production/27947cd44a36ece327b5a12a8f27b883e227df45-2252x1351.jpg'
-        },
-        {
-            url: 'https://cdn.sanity.io/images/m4z2cfaq/production/376a453dbf82a5f1e97ac9b02dfed6017af1c7de-2252x1351.tif'
-        },
-        {
-            url: 'https://cdn.sanity.io/images/m4z2cfaq/production/0c2584e6bffb65e3139138eb3bd7aea6991c4ab6-2252x1351.jpg'
-        },
-        {
-            url: 'https://cdn.sanity.io/images/m4z2cfaq/production/0c2584e6bffb65e3139138eb3bd7aea6991c4ab6-2252x1351.jpg'
-        },
-        ];
+    
 
         const [currentIndex, setCurrentIndex] = useState(0);
 
