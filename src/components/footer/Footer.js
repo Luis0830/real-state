@@ -37,7 +37,7 @@ function Footer() {
             <Link to='/'>Instagram</Link>
             <Link to={'.//www.facebook.com/people/Negocios-Inmobiliarios-Reyconfer/100058326134976'}>Facebook</Link>
             <Link to='/' onClick={onEmailClick}>Email</Link>
-            <Link to={'.//api.whatsapp.com/send?phone=18294432380'} target='_blank'>WhatsApp</Link>
+            <Link to={'https://api.whatsapp.com/send?phone=18294432380'} target='_blank'>WhatsApp</Link>
           </div>
         </div>
       </div>
@@ -69,7 +69,7 @@ function Footer() {
             </Link>
             <Link
               class='social-icon-link'
-              to={'.//api.whatsapp.com/send?phone=18294432380'}
+              to={'https://api.whatsapp.com/send?phone=18294432380'} 
               target='_blank'
               aria-label='Youtube'
             >

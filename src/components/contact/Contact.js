@@ -7,6 +7,7 @@ import {BsWhatsapp} from 'react-icons/bs';
 import {FaPhone} from 'react-icons/fa';
 import { GoMail } from "react-icons/go";
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 
 
 function Contact() {
@@ -41,8 +42,8 @@ function Contact() {
       <BsWhatsapp className='mt-5 mb-3 text-[30px] text-navi'/>
       <div className='mt-5 text-[12px]'>
       <h2>Escríbenos</h2>
-      <p>1-829-443-2380</p>
-      <p>+34 676 47 27 03</p>
+      <Link to={'https://api.whatsapp.com/send?phone=18294432380'} target='_blank' className=' no-underline cursor-pointer'><p>Aderson Contreras</p></Link>
+      <Link to={'https://api.whatsapp.com/send?phone=34676472703'} target='_blank' className=' no-underline cursor-pointer'><p>Ana Reyes</p></Link>
       </div>
       </div>
     <div className='sm:flex-col p-10 sm:m-0 sm:p-0 sm:ml-6 border-solid border-lineblue bg-lineblue rounded-[15px] overflow-hidden border-2 m-3  max-w-xs'>

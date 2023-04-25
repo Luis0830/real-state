@@ -317,9 +317,9 @@ const Imuebles = () => {
         {properties &&
           properties.map((property) => (
             <>
-              <InmuebleSection key={property.id}>
+              <InmuebleSection key={property.id} >
                 <Box key={property.id}>
-                  <ImgContainer>
+                  <ImgContainer className="cursor-pointer" onClick={() => handleProductClick(property._id)}>
                     {property.mainImage && (
                       <img src={urlFor(property.mainImage).url()} alt="" />
                     )}
@@ -337,8 +337,8 @@ const Imuebles = () => {
                       <div>
                         <h3>
                           <Link
-                            to={".//api.whatsapp.com/send?phone=18294432380"}
-                            target="_blank"
+                            to={'https://api.whatsapp.com/send?phone=18294432380'} 
+                            target='_blank'
                           >
                             <FaWhatsapp color="#128C7E" />
                           </Link>
@@ -379,7 +379,7 @@ const Imuebles = () => {
                         className="bg-d-red  no-underline py-2 px-3 rounded-[18px] border-0 rounded-r-md"
                         onClick={() => handleProductClick(property._id)}
                       >
-                        <p className="no-underline text-[white] text-[14px]">
+                        <p className="cursor-pointer no-underline text-[white] text-[14px]">
                           Detalles
                         </p>
                       </BtnOne>{" "}

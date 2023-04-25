@@ -14,6 +14,7 @@ module.exports = {
       'textarea': '#ADD8E6',
       'hoveline': '#00CCFF',
       'arrows'  :  '#000000',
+      'green'   : '#38E54D',
     },
     fontFamily: {
       'poppins': ['Poppins',  'sans-serif'],
