@@ -26,7 +26,7 @@ function ImgCarrusel({slides}) {
         };
 
   return (
-    <div className='md:max-w-[1400px] mid:max-w-[1000px] md:h-[700px] mid:h-[550px] w-full m-auto py-4 px-4 object-cover relative '>
+    <div className='md:max-w-[1400px] mid:max-w-[1000px] md:h-[700px] mid:h-[550px] w-full m-auto py-4 px-4 object-cover relative shadow-lg rounded-[25px] my-3'>
         <div style={{backgroundImage: `url(${slides[currentIndex].url})`}} className='w-full h-full rounded-[20px] bg-center object-cover bg-cover duration-500'>
 
         </div>

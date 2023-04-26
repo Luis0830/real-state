@@ -9,8 +9,10 @@ import { motion } from 'framer-motion';
 import { animationTwo, transition } from './Animations/Animations'
 import sanityClient from "../lib/client";
 import imageUrlBuilder from "@sanity/image-url";
-import { BsArrowsFullscreen } from "react-icons/bs";
+import { BsArrowsFullscreen, BsBox } from "react-icons/bs";
 import Footer from './footer/Footer';
+import ContactBox from './contact/ContactBox';
+
 
 
 function SingleProduct({ product }) {
@@ -59,30 +61,33 @@ function SingleProduct({ product }) {
       <>
         <section className='flex flex-col '>
           <div className='w-full'>
-            <ImgCarrusel slides={images} />
+            <ImgCarrusel  slides={images} /> 
             {/* <SingleSlider image={product.images.url} /> */}
           </div>        
-          <container className="flex flex-col content-center align-center mt-5 justify-center pl-[15%]">
-            <div>
-              <h1>{product.title}</h1>
-              <p>{product.details}</p>
-              <div className='flex justify-between' >
+          <container className="flex   mt-5  p-10">
+            <div className='w-[50%] '>
+            <div className='space-y-2 mb-2 text-[20px]'>
               <p><FaCircle className='text-green mr-1'/>{product.status}</p> 
-              <p>{product.price}</p>
-              </div>
+              <h1>{product.title}</h1>
+              <p className='font-bold text-textgrey'>{product.price}</p>
             </div>
-            <div className='flex'>
-              <div>
-                <p><FaBed />{product.beds} Habitaciones</p>
-                <p><FaToilet />{product.bath} Baños</p>
-                <p><GoLocation /> {product.location}</p>
+            <div className='flex mb-2'>
+              <div  className='content-start text-left place-content-start justify-items-start items-start space-y-4 mr-10 text-[18px]'>
+                <p><FaBed className='mr-1 text-[25px]'/>{product.beds} Habitaciones</p>
+                <p><FaToilet className='mr-1 text-[25px]'/>{product.bath} Baños</p>
+                <p><GoLocation className='mr-1 text-[25px]'/>{product.location}</p>
               </div>
               <div>
-                <p> <BsArrowsFullscreen />{product.mts}</p>
+                <p> <BsBox className='mr-1 text-[25px]'/>{product.mts}</p>
                 <div>iconos</div>
               </div>
             </div>
+            <p className='mb-2'>{product.details}</p>
             <button>Contactanos</button>
+            </div>
+            <div className='w-50%'>
+              <ContactBox />
+            </div>
           </container>
         </section>
       </>

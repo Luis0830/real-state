@@ -8,6 +8,7 @@ module.exports = {
       'd-red': '#ad2831',
       'white': '#fff',
       'bggrey': 'rgb(229 231 235)',
+      'textgrey': '#3d405b',
       'navi': '#1E2952',
       'naviblue': '#2c2c6c',
       'lineblue':'#4db5ff',
