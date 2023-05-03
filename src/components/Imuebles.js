@@ -201,6 +201,36 @@ const Imuebles = () => {
               url
             },
           },
+          img7{
+            asset->{
+              _id,
+              url
+            },
+          },
+          img7{
+            asset->{
+              _id,
+              url
+            },
+          },
+          img8{
+            asset->{
+              _id,
+              url
+            },
+          },
+          img9{
+            asset->{
+              _id,
+              url
+            },
+          },
+          img10{
+            asset->{
+              _id,
+              url
+            },
+          },
         }`
       )
       .then((data) => setProperties(data))
@@ -238,7 +268,7 @@ const Imuebles = () => {
       <div className="grid">
         <div className="content-center items-center text-center">
           <h1 className="  content-center items-center text-center">
-            Arreccifes Del Sol
+            Proyectos
           </h1>
         </div>
       </div>

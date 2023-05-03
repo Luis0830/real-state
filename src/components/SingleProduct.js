@@ -12,12 +12,12 @@ import imageUrlBuilder from "@sanity/image-url";
 import { BsArrowsFullscreen, BsBox } from "react-icons/bs";
 import Footer from './footer/Footer';
 import ContactBox from './contact/ContactBox';
-
+import {IoMdArrowRoundBack} from "react-icons/io";
 
 
 function SingleProduct({ product }) {
 
-  console.log(product.img1);
+  console.log(product.img2);
   console.log(product.mainImage);
 
 
@@ -46,8 +46,26 @@ function SingleProduct({ product }) {
     {
       url: (product.img6 !== null ? urlFor(product.img6).url() : null)
     },
+    {
+      url: (product.img7 !== null ? urlFor(product.img7).url() : null)
+    },
+    {
+      url: (product.img8 !== null ? urlFor(product.img8).url() : null)
+    },
+    {
+      url: (product.img9 !== null ? urlFor(product.img9).url() : null)
+    },
+    {
+      url: (product.img10 !== null ? urlFor(product.img10).url() : null)
+    }
   ].filter(image => image.url !== null);
   console.log(images);
+
+  
+    function handleClick() {
+      window.location.reload();
+    }
+ 
 
   return (
     <motion.div
@@ -60,6 +78,9 @@ function SingleProduct({ product }) {
       <NavTwo />
       <>
         <section className='flex flex-col '>
+          <div onClick={handleClick} className='mt-10 cursor-pointer '>
+            <h1><IoMdArrowRoundBack /> Atras</h1>
+          </div>
           <div className='w-full'>
             <ImgCarrusel  slides={images} /> 
             {/* <SingleSlider image={product.images.url} /> */}
@@ -85,8 +106,10 @@ function SingleProduct({ product }) {
             <p className='mb-2'>{product.details}</p>
             <button>Contactanos</button>
             </div>
-            <div className='w-50%'>
+            <div className='flex w-50% h-screen shadow-xl'>
+              <div className='rounded-[25px]' >
               <ContactBox />
+              </div>
             </div>
           </container>
         </section>

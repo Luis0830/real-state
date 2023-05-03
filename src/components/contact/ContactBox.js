@@ -19,7 +19,7 @@ export default function ContactBox() {
      
   return (
     <>
-    <div className=' md:mr-[25%] sm:mr-0 h-screen w-[50%] sm:h-[60%] sm:mt-[30%] sm:w-full sm:mr-0  flex items-center justify-center content-center'>
+    <div className='shadow-xl p-[10%] w-[100%]  sm:mt-[30%] sm:w-full sm:mr-0  flex items-center justify-center content-center rounded-[20px]'>
       <form ref={form} onSubmit={sendEmail} className='space-y-3  w-[100%] gap-5 flex-col content-center items-center justify-center'>
       <div className='sm:flex sm:content-center sm:items-center sm:justify-center'><h2 className='text-white -mt-20'>Escríbenos</h2></div>
          <p>Mas informacion sobre esta propiedad</p>

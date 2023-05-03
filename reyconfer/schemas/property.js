@@ -169,6 +169,38 @@ fields:[
           hotspot: true,
         },
       },
+      {
+        title: "imagen 7",
+        name: "img7",
+        type: "image",
+        options: {
+          hotspot: true,
+        },
+      },
+      {
+        title: "imagen 8",
+        name: "img8",
+        type: "image",
+        options: {
+          hotspot: true,
+        },
+      },
+      {
+        title: "imagen 9",
+        name: "img9",
+        type: "image",
+        options: {
+          hotspot: true,
+        },
+      },
+      {
+        title: "imagen 10",
+        name: "img10",
+        type: "image",
+        options: {
+          hotspot: true,
+        },
+      },
 ],
 // preview: {
 //     title: 'name', media: 'image'
