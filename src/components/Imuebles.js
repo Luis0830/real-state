@@ -263,6 +263,7 @@ const Imuebles = () => {
       exit="out"
       variants={animationTwo}
       transition={transition}
+      className="bg-gradient-to-b from-rose-100 to-teal-100"
     >
       <NavTwo />
       <div className="grid">
