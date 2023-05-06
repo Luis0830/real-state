@@ -25,6 +25,10 @@ module.exports = {
       'blurgrey': '#64748B',
       'inputline':'#94A3B8',
       'inputhover': '#71717A',
+      'textgray': '#334155',
+      'black': '#00000',
+
+
     },
     fontFamily: {
       'poppins': ['Poppins',  'sans-serif'],

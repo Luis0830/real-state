@@ -13,6 +13,7 @@ import { BsArrowsFullscreen, BsBox } from "react-icons/bs";
 import Footer from './footer/Footer';
 import ContactBox from './contact/ContactBox';
 import {IoMdArrowRoundBack} from "react-icons/io";
+import { Link } from 'react-router-dom';
 
 
 function SingleProduct({ product }) {
@@ -78,36 +79,43 @@ function SingleProduct({ product }) {
       <NavTwo />
       <>
         <section className='flex flex-col '>
-          <div onClick={handleClick} className='mt-10 cursor-pointer '>
-            <h1><IoMdArrowRoundBack /> Atras</h1>
+          <div   className='mt-3 ml-[48%] sm:ml-[35%]'>
+            <button onClick={handleClick} className='bg-bluenavi shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] border-0 py-3 px-15  w-[25%] sm:w-[50%] rounded-[25px]  cursor-pointer'><h1><IoMdArrowRoundBack /> Atras</h1></button>
           </div>
           <div className='w-full'>
             <ImgCarrusel  slides={images} /> 
             {/* <SingleSlider image={product.images.url} /> */}
           </div>        
-          <container className="flex   mt-5  p-10">
-            <div className='w-[50%] '>
+          <container className="flex sm:flex-col mt-5 sm:mt-1 p-10">
+            <div className='w-[50%] sm:w-[100%] ml-[12%] sm:ml-0 sm:m-2'>
             <div className='space-y-2 mb-2 text-[20px]'>
               <p><FaCircle className='text-green mr-1'/>{product.status}</p> 
-              <h1>{product.title}</h1>
+              <h1 className='sm:text-center '>{product.title}</h1>
               <p className='font-bold text-textgrey'>{product.price}</p>
             </div>
             <div className='flex mb-2'>
               <div  className='content-start text-left place-content-start justify-items-start items-start space-y-4 mr-10 text-[18px]'>
-                <p><FaBed className='mr-1 text-[25px]'/>{product.beds} Habitaciones</p>
-                <p><FaToilet className='mr-1 text-[25px]'/>{product.bath} Baños</p>
-                <p><GoLocation className='mr-1 text-[25px]'/>{product.location}</p>
+                <p><FaBed className='mr-1 text-d-blue text-[25px]'/>{product.beds} Habitaciones</p>
+                <p><FaToilet className='mr-1  text-d-blue text-[25px]'/>{product.bath} Baños</p>
+                <p><GoLocation className=' text-d-blue mr-1 text-[25px]'/>{product.location}</p>
               </div>
               <div>
-                <p> <BsBox className='mr-1 text-[25px]'/>{product.mts}</p>
-                <div>iconos</div>
+                <p> <BsBox className='mr-1 text-d-blue text-[25px]'/>{product.mts}</p>
+                
               </div>
             </div>
-            <p className='mb-2'>{product.details}</p>
-            <button>Contactanos</button>
+            <div className='w-[60%] sm:w-[100%]'><p className='mb-2 text-textgrey text-justify sm:text-center text-[13px] sm:text-[15px]'>{product.details}</p></div>
+            <button className="bg-d-blue border-0 mt-5 no-underline py-3 px-20 rounded-[18px] font-jaldi border-1 rounded-l-md text-[white] text-poppins text-[14px] sm:w-full">
+                        <Link
+                          to="/contactenos"
+                          className="no-underline text-[15px] text-white"
+                        >
+                          Contacto
+                        </Link>
+                      </button>
             </div>
-            <div className='flex w-50% h-screen shadow-xl'>
-              <div className='rounded-[25px]' >
+            <div className='flex rounded-[25px] w-50%  shadow-xl'>
+              <div  >
               <ContactBox />
               </div>
             </div>
