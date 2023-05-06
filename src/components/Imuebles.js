@@ -36,7 +36,6 @@ const Box = styled.div`
   width: 350px;
   overflow: hidden;
   border-radius: 5px;
-  box-shadow: 0px 0px 15px -5px;
   transition: transform 200ms ease-in;
 
   &:hover {
@@ -263,93 +262,23 @@ const Imuebles = () => {
       exit="out"
       variants={animationTwo}
       transition={transition}
-      className="bg-gradient-to-b from-rose-100 to-teal-100"
+      className="bg-blugray"
     >
       <NavTwo />
       <div className="grid">
         <div className="content-center items-center text-center">
-          <h1 className="  content-center items-center text-center">
+          <h1 className=" mt-10 mb-[-30px] content-center items-center text-center">
             Proyectos
           </h1>
         </div>
       </div>
-      {/* //     <ProSection>
-  //       {properties && */}
-      {/* //         properties.map((property) => (
-  //           <>
-  //             <InmuebleSection key={property.id}>
-  //               <Box key={property.id}>
-  //                 <ImgContainer>
-  //                   {property.mainImage && ( */}
-      {/* //                     <img src={urlFor(property.mainImage).url()} alt="" />
-  //                   )}
-  //                   <div>
-  //                     <h4>
-  //                       <GoLocation />
-  //                       {property.location}
-  //                     </h4>
-  //                     <h4>{property.status}</h4>
-  //                   </div>
-  //                 </ImgContainer>
-  //                 <BoxContent>
-  //                   <ItemPrice>
-  //                     <h2 className="text-[14px]">{property.price}</h2>
-  //                     <div>
-  //                       <h3>
-  //                         <FaWhatsapp color="#128C7E" />
-  //                       </h3>
-  //                       <h3>
-  //                         <GoMail color="#4285F4" />
-  //                       </h3>
-  //                     </div>
-  //                   </ItemPrice>
-  //                   <LocationBox>
-  //                     <h3>{property.title}</h3>
-  //                     <p>localizado en {property.location}</p>
-  //                   </LocationBox>
-  //                   <Details className="my-2">
-  //                     <h4>
-  //                       <i className="mr-1 text-[15px]"><BsArrowsFullscreen /></i>{property.mts}{" "}
-  //                     </h4>
-  //                     <h4>
-  //                       <i>
-  //                         <FaBed className="text-[15px]"/>
-  //                       </i>{" "}
-  //                       {property.beds} habitaciones{" "}
-  //                     </h4>
-  //                     <h4>
-  //                       <i>
-  //                         <FaToilet className="text-[15px]"/>
-  //                       </i>{" "}
-  //                       {property.bath} Baños{" "}
-  //                     </h4>
-  //                   </Details>
-  //                   <Botones className="gap-2">
-  //                     <BtnOne
-  //                       className="bg-d-red  no-underline py-2 px-3 rounded-[18px] border-0 rounded-r-md"
-  //                       onClick={() => handleProductClick(property._id)}
-  //                     >
-  //                       <p className="no-underline text-[white] text-[14px]">
-  //                         Detalles
-  //                       </p>
-  //                     </BtnOne>{" "}
-  //                     <BtnTwo className="bg-d-blue border-0 no-underline py-2 px-3 rounded-[18px] font-jaldi border-1 rounded-l-md text-[white] text-poppins text-[14px]">
-  //                       Contacto
-  //                     </BtnTwo>
-  //                   </Botones>
-  //                 </BoxContent>
-  //               </Box>
-  //             </InmuebleSection>
-  //           </>
-  //         ))}
-  //          </ProSection> */}
-      {/* seccion2 ***************************************************************************************************************/}
+    
       <ProSection>
         {properties &&
           properties.map((property) => (
             <>
-              <InmuebleSection key={property.id} >
-                <Box key={property.id}>
+              <InmuebleSection className=" rounded-[20px]" key={property.id} >
+                <Box className="bg-white shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]" key={property.id}>
                   <ImgContainer className="cursor-pointer" onClick={() => handleProductClick(property._id)}>
                     {property.mainImage && (
                       <img src={urlFor(property.mainImage).url()} alt="" />
@@ -429,78 +358,7 @@ const Imuebles = () => {
             </>
           ))}
       </ProSection>
-      {/* seccion 3s ********************************************************************************************/}
-      {/* // <ProSection>
-          // {properties &&
-          // properties.map((property) => (
-          //   <>
-          //     <InmuebleSection key={property.id}>
-          //       <Box key={property.id}>
-          //         <ImgContainer>
-          //           {property.mainImage && (
-          //             <img src={urlFor(property.mainImage).url()} alt="" />
-          //           )}
-          //           <div>
-          //             <h4>
-          //               <GoLocation />
-          //               {property.location}
-          //             </h4>
-          //             <h4>{property.status}</h4>
-          //           </div>
-          //         </ImgContainer>
-          //         <BoxContent>
-          //           <ItemPrice>
-          //             <h2 className="text-[14px]">{property.price}</h2>
-          //             <div>
-          //               <h3>
-          //                 <FaWhatsapp color="#128C7E" />
-          //               </h3>
-          //               <h3>
-          //                 <GoMail color="#4285F4" />
-          //               </h3>
-          //             </div>
-          //           </ItemPrice>
-          //           <LocationBox>
-          //             <h3>{property.title}</h3>
-          //             <p>localizado en {property.location}</p>
-          //           </LocationBox>
-          //           <Details className="my-2">
-          //             <h4>
-          //               <i className="mr-1 text-[15px]"><BsArrowsFullscreen /></i>{property.mts}{" "}
-          //             </h4>
-          //             <h4>
-          //               <i>
-          //                 <FaBed className="text-[15px]"/>
-          //               </i>{" "}
-          //               {property.beds} habitaciones{" "}
-          //             </h4>
-          //             <h4>
-          //               <i>
-          //                 <FaToilet className="text-[15px]"/>
-          //               </i>{" "}
-          //               {property.bath} Baños{" "}
-          //             </h4>
-          //           </Details>
-          //           <Botones className="gap-2">
-          //             <BtnOne
-          //               className="bg-d-red  no-underline py-2 px-3 rounded-[18px] border-0 rounded-r-md"
-          //               onClick={() => handleProductClick(property._id)}
-          //             >
-          //               <p className="no-underline text-[white] text-[14px]">
-          //                 Detalles
-          //               </p>
-          //             </BtnOne>{" "}
-          //             <BtnTwo className="bg-d-blue border-0 no-underline py-2 px-3 rounded-[18px] font-jaldi border-1 rounded-l-md text-[white] text-poppins text-[14px]">
-          //               Contacto
-          //             </BtnTwo>
-          //           </Botones>
-          //         </BoxContent>
-          //       </Box>
-          //     </InmuebleSection>
-          //   </>
-          // ))}
-          // </ProSection> */}
-
+      
       <Footer />
     </motion.div>
   );

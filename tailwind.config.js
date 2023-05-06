@@ -20,6 +20,11 @@ module.exports = {
       'hoveline': '#00CCFF',
       'arrows'  :  '#000000',
       'green'   : '#38E54D',
+      'blugray':'#F1F5F9',
+      'colorbox':'#075985',
+      'blurgrey': '#64748B',
+      'inputline':'#94A3B8',
+      'inputhover': '#71717A',
     },
     fontFamily: {
       'poppins': ['Poppins',  'sans-serif'],

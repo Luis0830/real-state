@@ -14,16 +14,16 @@ function About() {
 <meta name="keywords" content="bienes raíces, venta, apartamentos, reyconfer, República Dominicana, equipo, expertos" />
     </Helmet>
     <NavTwo />
-    <section className="bg-gradient-to-br from-navi to-d-red">
+    <section className="bg-blugray">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 mid:grid-cols-2 gap-8 items-center">
-          <div className='text-bggrey text-justify sm:text-center'>
+          <div className=' text-justify sm:text-center'>
             <h2 className="text-4xl font-bold border-white text-textarea mb-4 ">Bienvenidos a Reyconfer, nuestro sitio web de bienes raíces</h2>
             <p className="text-lg text-gray-700 mb-8">Somos un equipo de agentes experimentados que estamos apasionados por ayudar a nuestros clientes a encontrar la propiedad perfecta.</p>
             <ul className="list-disc list-inside mb-8 text-justify sm:text-center">
-              <li className="text-lg text-gray-700 mb-4">Servicio personalizado y atención al detalle</li>
-              <li className="text-lg text-gray-700 mb-4">Conocimiento extenso del mercado local de bienes raíces</li>
-              <li className="text-lg text-gray-700 mb-4">Fortaleza en habilidades de negociación para ayudarte a obtener la mejor oferta</li>
+              <li className="text-lg ">Servicio personalizado y atención al detalle</li>
+              <li className="text-lg ">Conocimiento extenso del mercado local de bienes raíces</li>
+              <li className="text-lg ">Fortaleza en habilidades de negociación para ayudarte a obtener la mejor oferta</li>
               <li className="text-lg text-gray-700 mb-4">Acceso a una amplia red de profesionales de la industria</li>
             </ul>
             <Link to="/contactenos" className="bg-gradient-to-br text-white from-navi to-d-white border-solid border-textarea border-[2px] outline-hoveline text-[18px] p-5 w-[50%] no-underline sm:w-[70%] rounded-[23px] bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
