@@ -19,7 +19,7 @@
   color: #fff;
 }
 
-.footer-subscription > p {
+.footer-subscription>p {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
 }
@@ -70,7 +70,7 @@
   margin-bottom: 16px;
 }
 
-.footer-link-items > h2 {
+.footer-link-items>h2 {
   color: #fff;
 }
 
@@ -102,11 +102,11 @@
 
 }
 
-.social-icon-link:hover{
+.social-icon-link:hover {
   transform: scale(1.30);
   color: #ad2831;
- }
- 
+}
+
 
 .social-media {
   max-width: 1000px;
@@ -168,5 +168,4 @@
   }
 }
 
-@media screen and (max-width: 768px) {
-}
+@media screen and (max-width: 768px) {}
