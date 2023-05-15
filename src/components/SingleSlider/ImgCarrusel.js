@@ -36,7 +36,7 @@ function ImgCarrusel({slides}) {
     </div>
       {/* Right Arrow*/}
     <div className='absolute top-[50%] -translate-x-0 translate-y-[-50%] right-7  sm:right-1 text-2xl p-2 sm:text-[12px] text-white cursor-pointer'>
-    <FaArrowAltCircleRight onClick={nextSlide} className='sm:text-[55px] text-navi/70'/>
+    <FaArrowAltCircleRight onClick={nextSlide} className='text-[65px] sm:text-[55px] text-navi/70'/>
     </div>
     <div className='flex top-4 justify-center py-2'>
         {slides.map((slide,  slideIndex) => (

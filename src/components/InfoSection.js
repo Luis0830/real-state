@@ -174,7 +174,7 @@ const InfoSection = () => {
                     <div className="items-center justify-center text-center cursor-pointer">
                       <Link to="/inmueble">
                         <button
-                          className=" cursor-pointer p-4 sm:p-3 w-[50%] sm:w-full md:mb-5 border-2 border-solid rounded-[25px] bg-d-blue text-white font-bold md:text-[15px] sm:text-[12px]"
+                          className=" cursor-pointer p-4 sm:p-3 w-[50%] sm:w-full md:mb-5 border-0 rounded-[25px] bg-d-blue text-white font-bold md:text-[15px] sm:text-[12px]"
                           primary="true"
                         >
                           Mas informacion
