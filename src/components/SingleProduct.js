@@ -89,7 +89,7 @@ function SingleProduct({ product }) {
           <container className="flex sm:flex-col mt-5 sm:mt-1 p-10">
             <div className='w-[50%] sm:w-[100%] ml-[12%] sm:ml-0 sm:m-2'>
             <div className='space-y-2 mb-2 text-[20px]'>
-              <p><FaCircle className='text-green mr-1'/>{product.status}</p> 
+              <div className='flex'><p><FaCircle className='text-green mr-1'/>{product.status}</p> <h3 className='ml-10'>{product.project}</h3></div>
               <h1 className='sm:text-center '>{product.title}</h1>
               <p className='font-bold text-textgrey'>{product.price}</p>
             </div>

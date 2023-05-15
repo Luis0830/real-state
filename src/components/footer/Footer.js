@@ -35,7 +35,7 @@ function Footer() {
           <div class='footer-link-items'>
             <h2>Redes Sociales</h2>
             <Link to='/'>Instagram</Link>
-            <Link to={'.//www.facebook.com/people/Negocios-Inmobiliarios-Reyconfer/100058326134976'}>Facebook</Link>
+            <Link to={'.//www.facebook.com/people/Negocios-Inmobiliarios-Reyconfer/100058326134976'} target='_blank'>Facebook</Link>
             <Link to='/' onClick={onEmailClick}>Email</Link>
             <Link to={'https://api.whatsapp.com/send?phone=18294432380'} target='_blank'>WhatsApp</Link>
           </div>
@@ -51,14 +51,16 @@ function Footer() {
           </div>
           <small class='website-rights'>Reyconfer © 2023</small>
           <div class='social-icons'>
-            <Link
-              class='social-icon-link'
-              to= {'.//www.facebook.com/people/Negocios-Inmobiliarios-Reyconfer/100058326134976'}
-              target='_blank'
-              aria-label='Facebook'
-            >
-              <FaFacebook/>
-            </Link>
+          <a
+  className='social-icon-link'
+  href='https://www.facebook.com/people/Negocios-Inmobiliarios-Reyconfer/100058326134976'
+  target='_blank'
+  rel='noopener noreferrer'
+  aria-label='Facebook'
+>
+<FaFacebook/>
+</a>
+            
             <Link
               class='social-icon-link'
               to='/'

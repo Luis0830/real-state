@@ -135,6 +135,7 @@ const Imuebles = () => {
       .fetch(
         `*[_type == "property" || _type == ""]{
           title,
+          project,
           id,
           price,
           path,
@@ -311,8 +312,9 @@ const Imuebles = () => {
                       </div>
                     </ItemPrice>
                     <LocationBox>
-                      <h3>{property.title}</h3>
-                      <p className="text-center">{property.info}</p>
+                      <h3 className="text-center mb-1">{property.project}</h3>
+                      <h1 className="text-[15px] mb-1">{property.title}</h1>
+                      <p className="text-left">{property.info}</p>
                     </LocationBox>
                     <Details className="my-2">
                       <h4>

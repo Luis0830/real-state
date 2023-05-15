@@ -46,7 +46,7 @@ function Contact() {
       <Link to={'https://api.whatsapp.com/send?phone=34676472703'} target='_blank' className=' no-underline cursor-pointer'><p className='text-[16px] text-naviblue'>Ana Reyes</p></Link>
       </div>
       </div>
-    <div className='sm:flex-col p-10 sm:m-0 sm:p-5 sm:ml-6  shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px] bg-white bg-opacity-50 rounded-[15px] overflow-hidden border-2 m-3  max-w-xs'>
+    <div className='sm:flex-col p-10 sm:m-0 sm:p-5 sm:ml-6  shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px] bg-white  rounded-[15px] overflow-hidden border-2 m-3  max-w-xs'>
       <GoMail className='text-[40px] sm:-mb-[40px] sm:mt-5 text-navi'/>
       <div className='flex  mb-5 sm:m-0 sm:mt-8 sm:mb-0 flex-col '>
       <h2 className='mb-[6px] text-[20px] text-textgray'>Email</h2>
