@@ -34,7 +34,7 @@ function Footer() {
           
           <div class='footer-link-items'>
             <h2>Redes Sociales</h2>
-            <Link to='/'>Instagram</Link>
+            <Link to='https://instagram.com/reyconfer?igshid=Y2IzZGU1MTFhOQ=='>Instagram</Link>
             <Link to={'.//www.facebook.com/people/Negocios-Inmobiliarios-Reyconfer/100058326134976'} target='_blank'>Facebook</Link>
             <Link to='/' onClick={onEmailClick}>Email</Link>
             <Link to={'https://api.whatsapp.com/send?phone=18294432380'} target='_blank'>WhatsApp</Link>
