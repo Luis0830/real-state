@@ -1,6 +1,7 @@
 import ImagenA from '../images/sliders/arroyo.jpg'
 import ImagenB from '../images/sliders/sol.jpg'
-import ImagenC from '../images/sliders/terrazas.png'
+import ImagenC from '../images/sliders/garden.jpeg'
+import ImagenD from '../images/sliders/bluem.jpg'
 
 export const SliderData = [
     {
@@ -21,11 +22,21 @@ export const SliderData = [
         alt: 'Recidencia'
     },
     {
-        title: 'Nuevas Terrazas',
-        price: 'desde $26,000.00',
+        title: 'Garden At The Beach',
+        price: 'desde US$67,000.00',
         path: '/inmueble',
         label: 'informacion',
         image: ImagenC,
         alt: 'Recidencia'
+    },
+    {
+        title: 'Blue Marlin Boulevard',
+        price: 'desde US$85,000',
+        path: '/inmueble',
+        label: 'informacion',
+        image: ImagenD,
+        alt: 'Recidencia'
     }
+
+
 ]

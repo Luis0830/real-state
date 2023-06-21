@@ -63,7 +63,7 @@ function Footer() {
             
             <Link
               class='social-icon-link'
-              to='/'
+              to={'https://instagram.com/reyconfer?igshid=Y2IzZGU1MTFhOQ=='}
               target='_blank'
               aria-label='Instagram'
             >

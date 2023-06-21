@@ -11,7 +11,7 @@ import sanityClient from "../lib/client";
 import imageUrlBuilder from "@sanity/image-url";
 import SingleProduct from "./SingleProduct";
 import Footer from "./footer/Footer";
-import ImageSlider from "./ImageSlider";
+
 
 const builder = imageUrlBuilder(sanityClient);
 
