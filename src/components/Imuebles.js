@@ -338,14 +338,14 @@ const Imuebles = () => {
                     </Details>
                     <Botones className="gap-2">
                       <BtnOne
-                        className="bg-d-red  no-underline py-2 px-3 rounded-[18px] border-0 rounded-r-md"
+                        className="bg-colorbox  no-underline py-2 px-3 rounded-[18px] border-0 rounded-r-md"
                         onClick={() => handleProductClick(property._id)}
                       >
                         <p className="cursor-pointer no-underline text-[white] text-[14px]">
                           Detalles
                         </p>
                       </BtnOne>{" "}
-                      <BtnTwo className="bg-d-blue border-0 no-underline py-2 px-3 rounded-[18px] font-jaldi border-1 rounded-l-md text-[white] text-poppins text-[14px]">
+                      <BtnTwo className="bg-newtext border-0 no-underline py-2 px-3 rounded-[18px] font-jaldi border-1 rounded-l-md text-[white] text-poppins text-[14px]">
                         <Link
                           to="/contactenos"
                           className="no-underline text-white"

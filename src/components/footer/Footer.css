@@ -1,6 +1,6 @@
 .footer-container {
-  background-color: #042642;
-  padding: 4rem 0 2rem 0;
+  background-color: #C5DFF8;
+  padding: 1rem 0 1rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,7 +16,7 @@
 
   margin-bottom: 24px;
   padding: 24px;
-  color: #fff;
+  color: #023F52;
 }
 
 .footer-subscription>p {
@@ -42,7 +42,7 @@
   border: none;
   font-size: 18px;
   margin-bottom: 16px;
-  border: 1px solid #fff;
+  border: 1px solid #023F52;
 }
 
 .footer-links {
@@ -71,17 +71,17 @@
 }
 
 .footer-link-items>h2 {
-  color: #fff;
+  color: #023F52;
 }
 
 .footer-link-items a {
-  color: #fff;
+  color: #023F52;
   text-decoration: none;
   margin-bottom: 0.5rem;
 }
 
 .footer-link-items a:hover {
-  color: #e9e9e9;
+  color: #023F52;
   transition: 0.3s ease-out;
 }
 
@@ -90,12 +90,12 @@
 }
 
 .footer-input::placeholder {
-  color: #b1b1b1;
+  color: #023F52;
 }
 
 /* Social Icons */
 .social-icon-link {
-  color: #fff;
+  color: #023F52;
   font-size: 24px;
   transition: transform 200ms ease-in;
 
@@ -104,7 +104,7 @@
 
 .social-icon-link:hover {
   transform: scale(1.30);
-  color: #ad2831;
+  color: #062D94;
 }
 
 
@@ -130,7 +130,7 @@
 }
 
 .social-logo {
-  color: #fff;
+  color: #023F52;
   justify-self: start;
   margin-left: 20px;
   cursor: pointer;
@@ -142,7 +142,7 @@
 }
 
 .website-rights {
-  color: #fff;
+  color: #023F52;
   margin-bottom: 16px;
 }
 

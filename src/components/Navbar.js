@@ -9,7 +9,7 @@ import {FaWhatsapp} from 'react-icons/fa'
 
 const Nav = styled.nav`
 
-height: 60px;
+height: 80px;
 display: flex;
 justify-content: space-between;
 padding: 1rem 1rem;
@@ -20,7 +20,6 @@ width: 100%;
 /*background: red; arriba */
 
 const NavLink = css` 
-color: #fff;
 display: flex;
 align-items: center;
 padding: 0 1rem;
@@ -45,7 +44,7 @@ display: none;
     top: 0; 
     right: 0;
     transform: translate(-90%,25%);
-    color: #fff;
+    color: #023F52;
     font-size: 25px;
 }
 `;
@@ -68,8 +67,8 @@ const NavWS = styled.div`
 display: flex;
 align-items: center;
 margin-right: 24px;
-color: #fff;
-font-size: 1.5rem;
+color: #fafafa;
+font-size: 1.9rem;
 transition: transform 200ms ease-in;
 
 
@@ -99,18 +98,17 @@ window.addEventListener('scroll', ChangeColor)
 
 
     return(
-        <Nav style={navColor? {"background-color":"#00062C"} : {"background-color": ""}}>
-            <Logo to='/'><img src={require('../images/Logo1.png')} height='170' width='100%' alt='logo'/></Logo>
-            <MenuBars onClick={toggle}/>
+        <Nav style={navColor? {"backgroundColor":"rgba(197, 223, 248)"} : {"background-color": ""}}>
+            <Logo to='/'><img src={require('../images/Logo1.png')} height='82' width='100%' alt='logo'/></Logo>
+            <MenuBars onClick={toggle} />
             <NavMenu>
                 {menuData.map((item, index) => (
-                    <NavMenuLinks to={item.Link} key={index} className='text-[17px] font-bold'>
-                        {item.title}
+                    <NavMenuLinks to={item.Link} key={index} className={`text-[20px] font-bold text-[${navColor ? '#023F52' : '#fafafa'}]`}  style={{color: navColor ? '#023F52' : '#fafafa'}} >                    {item.title}
                     </NavMenuLinks>
                 ))}
             </NavMenu>
             <NavWS>
-               <Link to={'.//api.whatsapp.com/send?phone=18294432380'} target='_blank'><FaWhatsapp color='#fff'/></Link>
+               <Link to={'.//api.whatsapp.com/send?phone=18294432380'} target='_blank'><FaWhatsapp color={navColor ? '#023F52' : '#fafafa'}/></Link>
             </NavWS>
         </Nav>
     );
@@ -122,7 +120,7 @@ export function NavTwo() {
 
     const NavTwo = styled.nav`
 
-height: 60px;
+height: 82px;
 display: flex;
 justify-content: space-between;
 padding: 1rem 1rem;

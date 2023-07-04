@@ -21,12 +21,15 @@ module.exports = {
       'arrows'  :  '#000000',
       'green'   : '#38E54D',
       'blugray':'#F1F5F9',
-      'colorbox':'#075985',
+      'colorbox':'#1EB3C8',
       'blurgrey': '#64748B',
       'inputline':'#94A3B8',
       'inputhover': '#71717A',
       'textgray': '#334155',
       'black': '#00000',
+      'newblue': '#0B2EAA',
+      'newtext': '#023F52'
+      
 
 
     },
