@@ -125,7 +125,7 @@ display: flex;
 justify-content: space-between;
 padding: 1rem 1rem;
 width: 100%;
-background-color: black;
+background-color: rgba(197, 223, 248);
 `;
   return (
     <NavTwo />
